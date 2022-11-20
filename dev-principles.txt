@@ -1,0 +1,18 @@
+// Following are the rules required to be followed while development //
+
+1. No class, file, folder, image will have a uppercase/capital letter in name unless it is a component.
+2. Always use color codes defined in color.scss
+3. Never define more than one component in a single file.
+4. Prioritise svg image over png/jpeg.
+5. Create branch according to ticket name. Commit message should have ticket name; git commit -m "CV-1 | Initialised Project"
+6. file name should not have whitespace, replace them with - or _
+
+// Recent Refactor Notes:
+1.) use svg instead of png.
+2.) input component padding issue with placehoder
+3.) placeholder font size issue
+4.) dashboard allignment
+5.) interview-table-th
+6.) Create button component
+7.) Remove padding right from password
+8.) Update INPUT component and remove redundant componets in its file
