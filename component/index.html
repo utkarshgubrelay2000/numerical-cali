@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Footer</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: 'Montserrat',sans-serif;
+        }
+        .main-footer{
+            padding: 70px 0 ;
+            display: flex;
+            justify-content: space-evenly;
+            background-color: #19302E;
+        }
+        .main-footer ul{
+            list-style: none;
+        }
+        .main-footer h1{
+            font-size: 22px;
+            line-height: 117%;
+            color: #ffffff;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        .main-footer h2{
+            color: #ffffff;
+            font-weight: 500;
+        }
+        .main-footer ul li a{
+            color: #ffffffcc;
+            text-decoration: none;
+        }
+        footer{
+            background-color: #19302E;
+            border-top: 1px solid #6EB981;
+            font-size: 17px;
+            padding: 15px 5px;
+            color: #ffffff;
+            text-align: center;
+        }
+        footer a{
+            text-decoration: none;
+            color: #ffffff;
+        }
+        .logoinfo p {
+            color:#6EB981 ;
+            font-size: 17px;
+            margin-top: 5px;
+        }
+        .contact-details{
+            list-style: none;
+            margin: 10px 0;
+        }
+        .contact-details li a{
+            text-decoration: none;
+            color: #f1f1f1;
+        }
+        .contact-details .fa{
+            color: #f1f1f1;
+            margin-right: 10px;
+        }
+        .sociallogos{
+            padding: 20px 0;
+        }
+        .sociallogos .logobox a{
+            padding: 0 10px ;
+                text-decoration: none;
+                color: #ffffff;
+                font-size: 22px;
+        }
+        .com ul li{
+            padding: 5px 0;
+        }
+        @media only screen and (max-width: 749px){
+            .main-footer{
+                padding: 20px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+            .info{
+                padding: 20px 0;
+            }
+        }
+        @media (max-width: 480px){
+            .main-footer{
+                grid-template-columns: 1fr;
+            }
+            .sociallogos{
+                padding: 20px 0;
+            }
+            .com{
+                padding: 20px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section id="footer">
+        <div class="main-footer">
+                <div class="logoinfo" data-aos="fade-up">
+                        <h2>Responsive Footer</h2>
+                        <p>By Hemant</p>
+
+                        <div class="contact-details">
+                            <h1>Contact Us</h1>
+                            <li>
+                                <div class="fa fa-phone"></div><a href="tel:+910000000000">+91 0000000000</a>
+                            </li>
+                            <li><div class="fa fa-envelope"></div><a href="mailto:arorahemant75@gmail.com">arorahemant75@gmail.com</a></li>
+                            </li>
+                        </div>
+                </div>
+                <div class="com" data-aos="fade-up">
+                    <h1>About</h1>
+                 <ul>
+               <li> <a href="#" >Home</a></li>
+               <li> <a href="#">About</a></li>
+               <li> <a href="#">Projects</a></li>
+               <li> <a href="#">Contact</a></li>
+            </ul>   
+            </div>
+            <div class="info" data-aos="fade-up">
+                <h1>Social Media</h1>
+                <div class="sociallogos">
+                    <div class="logobox">
+                        <a href="#" class="fa fa-instagram"></a>
+                        <a href="#" class="fa fa-linkedin"></a>
+                        <a href="#" class="fa fa-facebook"></a>
+                        <a href="#" class="fa fa-youtube-play"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>&copy; Your Copyright 2021 All Rights Reserved</footer>
+    </section>
+</body>
+</html>

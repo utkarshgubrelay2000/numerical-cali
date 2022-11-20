@@ -11,9 +11,26 @@ body {
   color: #ffffff;
   padding: 10px 20px;
   text-decoration: none;
+  width: 60%;
   font-size: 1.2rem;
   font-weight: 500;
   transition: all 0.3s ease;
+}
+.cta-btn-a{
+
+	border-radius: 5px;
+	color: #ff7b79;
+	border: #ff7b79 dotted 1px;
+	padding: 6px;
+	text-decoration: none;
+	width: 100%;
+	font-size: .8vi;
+	font-weight: 500;
+	transition: all 0.3s ease;
+}
+.cta-btn-a:hover{
+	background-color: #ff7b79;
+	color: #ffffff;
 }
 .cta-btn:hover{
 	  background-color: white;
@@ -205,36 +222,11 @@ body.open .burger {
     visibility: hidden;
     translate: 0 24px;
     transition: 0.3s;
-  }
+  }}
 
-  .dropdown:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    translate: 0 0;
-  }
-}
 
-.dropdown-menu > button {
-  opacity: 1;
-  height: 40px;
-  color: #ffffff;
-  font-size: 16px;
-  letter-spacing: 1px;
-}
 
-@media (width >= 500px) {
-  .dropdown-menu > button {
-    opacity: 0.6;
-  }
 
-  .dropdown:hover .button {
-    opacity: 1;
-  }
-}
-
-.dropdown-menu > button:hover {
-  opacity: 1;
-}
 
 html,
 body {
