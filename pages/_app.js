@@ -1,5 +1,6 @@
 import '../styles/globals.css';
 import '../styles/color.scss'
+import '../styles/method.scss'
 import '../styles/main.scss'
 import '../styles/footer.scss'
 import 'react-toastify/dist/ReactToastify.css';  
