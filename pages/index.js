@@ -181,27 +181,27 @@ export async function getStaticProps(content) {
         },
         {
           title: "  Trapezoidal function",
-          link: "/method/numerical_integration/trapezoidal_function",
+          link: "/method/numerical_intergration/trapezoidal_function",
         },
         {
           title: " Simpson's (1/3)rd Rule (Tabular)",
-          link: "/method/numerical_integration/simpson_rule",
+          link: "/method/numerical_intergration/simpsons_rule",
         },
         {
           title: " Simpson's (1/3)rd Rule (Funtions)",
-          link: "/method/numerical_integration/simpson_function",
+          link: "/method/numerical_intergration/simpsons_function",
         },
         {
           title: " Simpson's 3/8 Rule",
-          link: "/method/numerical_integration/simpson_third_rule",
+          link: "/method/numerical_intergration/simpsons_third_rule",
         },
         {
           title: "Simpson's 3/8 Rule Functions",
-          link: "/method/numerical_integration/simpson_third_function",
+          link: "/method/numerical_intergration/simpsons_third_function",
         },
         {
           title: "Gaussian_Quadrature",
-          link: "/method/numerical_integration/gaussian_quadrature",
+          link: "/method/numerical_intergration/gaussian_quadrature",
         },
       ],
     },

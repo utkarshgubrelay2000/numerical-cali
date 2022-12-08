@@ -151,7 +151,7 @@ export default function Home(props) {
                   <tr>
                     {matrix.map((i, ind) => {
                       return (
-                        <td key={index} className="m-0 p-0">
+                        <td key={ind} className="m-0 p-0">
                           <input
                             placeholder={`${ind}`}
                             className="table-input"
