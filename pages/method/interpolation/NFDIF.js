@@ -104,7 +104,7 @@ export default function Home(props) {
   
         setTable(res.data.table);
         setRoot(res.data.root);
-        setShowTable(true);
+        setShowTable(true);setResponse(true)
         }
       }
     } catch (error) {

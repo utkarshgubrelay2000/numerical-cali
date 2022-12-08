@@ -94,6 +94,7 @@ export default function Home(props) {
     setRoot("");
     setTable([]);
     setResponse(false);
+
     setEquation("");
     toast.success("Clear Success");
   };
@@ -115,6 +116,7 @@ console.log(res.data.arr);
         setTable(res.data?.arr);
         setRoot(res.data?.data?.root);
         setShowTable(true);
+        setResponse(true)
       }
 
     } } catch (error) {
@@ -170,9 +172,7 @@ console.log(res.data.arr);
                       name="example-text-input"
                       placeholder="Value of B"
                     />
-                     
-                 
-                 
+    
                   </div>
                   <div className="form-group mt-2 col-12 ">
                   <TextField id="standard-basic" label="Equation" variant="filled" 
@@ -202,29 +202,34 @@ console.log(res.data.arr);
                   <div>
                     <h6 className="main-content-label mb-1">Answer</h6>
                   </div>
-                  <div className=" bg-light  border ">
-                  
-                    <table className="table  text-md-nowrap table-hover mg-b-0">
+    
+                  <table className="table table-responsive text-md-nowrap table-hover mg-b-0">
                       <thead>
                         <tr>
-                          <th>Value</th>
-                          <th>Answer</th>
-                         
+                          <th>S.No</th>
+                          <th>A</th>
+                          <th>B</th>
+                          <th>m</th>
+                          <th>f(m)</th>
+                          <th>f(m)*f(a)</th>
                         </tr>
                       </thead>
                       <tbody>
                         {table && table.map((item, index) => {
                           return (
                             <tr key={index}>
-                              <th scope="row">X{index + 1}</th>
-                              <td>{item}</td>
-                              
+                              <th scope="row">{index + 1}</th>
+                              <td>{item.a}</td>
+                              <td>{item.b}</td>
+                              <td>{item.m}</td>
+                              <td>{item.fm}</td>
+                              <td>{item.fma}</td>
                             </tr>
                           );
                         })}{" "}
                       </tbody>
                     </table>
-                  </div>
+                
                 </div> 
                 <div className='text-center'>
 
@@ -235,15 +240,17 @@ console.log(res.data.arr);
   </button><button onClick={()=>setShowGraph("Dough")} className="btn btn-primary m-3">
     Doughnut
   </button>
+ 
 
-{showGraph? response?
+{showGraph&&response?
   <div >
     {showGraph==='Bar'?
-    <BarGraph graphData={table}/>:showGraph==='Line'?
-    <LineGraph graphData={table}/>: <DoughGraph graphData={table}/>
+    <BarGraph graphData={table}/>:
+    showGraph==='Line'?
+    <LineGraph graphData={table}/>: 
+    <DoughGraph graphData={table}/>
   }
-  </div>:null
-  :null}
+  </div>:null}
 </div>
                 </>
                     }

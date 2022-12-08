@@ -106,7 +106,7 @@ const [showTable,setShowTable]=useState(false)
       else{
 
       setRoot(res.data.root);
-      setShowTable(true);
+      setShowTable(true);setResponse(true)
       }
 
     } } catch (error) {

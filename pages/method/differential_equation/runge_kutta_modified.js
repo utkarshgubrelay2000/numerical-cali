@@ -108,7 +108,7 @@ export default function Home(props) {
           }
           setTable(array)
           setTable2(array2)
-        setShowTable(true);}
+        setShowTable(true);setResponse(true)}
       }
     } catch (error) {
       //  console.log(error.response);

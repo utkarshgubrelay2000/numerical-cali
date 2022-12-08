@@ -102,7 +102,7 @@ export default function Home(props) {
      console.log(res.data);
         setTable(res.data.table);
         setRoot(res.data.root);
-        setShowTable(true);}
+        setShowTable(true);setResponse(true)}
       }
     } catch (error) {
       //  console.log(error.response);

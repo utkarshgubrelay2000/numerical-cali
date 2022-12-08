@@ -105,12 +105,12 @@ export default function Home(props) {
         };
 
         let res = await regulaFalsiMethod(data);
-        if(res.error){     toast.error(res?.data?.response?.data)
+        if(res.error){     toast.error(res?.data?.response?.data)}
         else{
   
         setTable(res.data.table);
         setRoot(res.data.root);
-      setShowTable(true);
+      setShowTable(true);setResponse(true)
         }
       }
     } catch (error) {
@@ -194,24 +194,32 @@ export default function Home(props) {
                             <h6 className="main-content-label mb-1">Answer</h6>
                           </div>
                           <div className=" bg-light  border ">
-                            <table className="table  text-md-nowrap table-hover mg-b-0">
-                              <thead>
-                                <tr>
-                                  <th>Value</th>
-                                  <th>Answer</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                {table && table.map((item, index) => {
-                                  return (
-                                    <tr key={index}>
-                                      <th scope="row">X{index + 1}</th>
-                                      <td>{item}</td>
-                                    </tr>
-                                  );
-                                })}{" "}
-                              </tbody>
-                            </table>
+                          <table className="table table-responsive text-md-nowrap table-hover mg-b-0">
+                      <thead>
+                        <tr>
+                          <th>S.No</th>
+                          <th>A</th>
+                          <th>B</th>
+                          <th>m</th>
+                          <th>f(m)</th>
+                          <th>f(m)*f(a)</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {table && table.map((item, index) => {
+                          return (
+                            <tr key={index}>
+                              <th scope="row">{index + 1}</th>
+                              <td>{item.a}</td>
+                              <td>{item.b}</td>
+                              <td>{item.m}</td>
+                              <td>{item.fm}</td>
+                              <td>{item.fma}</td>
+                            </tr>
+                          );
+                        })}{" "}
+                      </tbody>
+                    </table>
                           </div>
                         </div>
                         <div className="text-center">
