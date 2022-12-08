@@ -264,7 +264,7 @@ export default function Home(props) {
                 className="mw-100"
               />
               <p style={{ wordSpacing: "1px" }}>
-                Newton's Method : - Newton's Method is also called the
+                Newton{"'"}s Method : - Newton{"'"}s Method is also called the
                 <strong> Newton-Raphson method</strong> is a recursive algorithm
                 for approximating the root of a differentiable function f(x)=0.
                 It is based on the geometry of a curve, using the tangent lines
@@ -282,13 +282,13 @@ export default function Home(props) {
                     Guess a initial value, say b and initialize error e (depends
                     upto what accuracy you want the result)
                   </li>
-                  <li>find m = b-(f(b)/f'(b))</li>
+                  <li>find m = b-(f(b)/f{"'"}(b))</li>
                   <li>
                     m is the root of the given function if f(m) = 0 then stop
                     else follow the next step
                   </li>
                   <li> b = m</li>
-                  <li>m = b-(f(b)/f'(b))</li>
+                  <li>m = b-(f(b)/f{"'"}(b))</li>
                   <li>Repeat 3, 4, 5 step untill |f(m)|{"<"}e.</li>
                 </ul>
               </p>

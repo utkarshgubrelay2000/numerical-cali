@@ -149,7 +149,7 @@ const [showTable,setShowTable]=useState(false)
                       <tr >
                         {matrix.map((i, ind) => {
                           return (
-                            <td className="m-0 p-0">
+                            <td key={index} className="m-0 p-0">
                               <input
                                 placeholder={`${ind}`}
                                 className="table-input"

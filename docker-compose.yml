@@ -1,0 +1,10 @@
+version: '3.9'
+services:
+
+  nadfront:
+    restart: always
+    container_name: nad-frontend
+    build: .
+    ports:
+      - '3000:3000'
+  
