@@ -101,15 +101,15 @@ export async function getStaticProps(content) {
         },
         {
           title: "Regula Falsi Method",
-          link: "/method/falseposition",
+          link: "/method/regula_falsi",
         },
         {
           title: "Fixed Point Iteration",
-          link: "/method/onepoint",
+          link: "/method/fixed_iteration",
         },
         {
           title: "Newton Method",
-          link: "/method/newtonraphson",
+          link: "/method/newton_method",
         },
         {
           title: "Secant Method",
@@ -122,19 +122,19 @@ export async function getStaticProps(content) {
       content: [
         {
           title: "Gauss Elimination Method",
-          link: "/method/gausselimination",
+          link: "/method/gauss_elimination",
         },
         {
           title: "Gauss-Jordan Method",
-          link: "/method/gaussjordan",
+          link: "/method/gauss_jordan",
         },
         {
           title: "Jacobi Iteration Method",
-          link: "/method/jacobi",
+          link: "/method/jacobbi_method",
         },
         {
           title: "Seidel Iteration Method",
-          link: "/method/gaussseidel",
+          link: "/method/gauss_seidel",
         },
       ],
     },
@@ -143,23 +143,23 @@ export async function getStaticProps(content) {
       content: [
         {
           title: "Newton Forword Difference",
-          link: "/method/linear",
+          link: "/method/interpolation/NFDIF",
         },
         {
           title: "Newton Backward Difference",
-          link: "/method/polynomial",
+          link: "/method/interpolation/NBDIF",
         },
         {
           title: "Newton's Divided Difference",
-          link: "/method/newton",
+          link: "/method/interpolation/NDDIF",
         },
         {
           title: "Lagrange Interpolation",
-          link: "/method/lagrange",
+          link: "/method/interpolation/lagrange",
         },
         {
-          title: "onverse Interpolation",
-          link: "/method/spline",
+          title: "Inverse Interpolation",
+          link: "/method/interpolation/inverse",
         },
       ],
     },
@@ -168,11 +168,11 @@ export async function getStaticProps(content) {
       content: [
         {
           title: "Forward Difference Table",
-          link: "/method/lu",
+          link: "/method/difference_table/forward",
         },
         {
           title: "Divided Differnece Table",
-          link: "/method/cholesky",
+          link: "/method/difference_table/divided",
         },
       ],
     },
@@ -181,31 +181,31 @@ export async function getStaticProps(content) {
       content: [
         {
           title: " Trapezoidal Rule",
-          link: "/method/composite",
+          link: "/method/numerical_integration/trapezoidal_rule",
         },
         {
           title: "  Trapezoidal function",
-          link: "/method/simpson",
+          link: "/method/numerical_integration/trapezoidal_function",
         },
         {
           title: " Simpson's (1/3)rd Rule (Tabular)",
-          link: "/method/composite",
+          link: "/method/numerical_integration/simpson_rule",
         },
         {
           title: " Simpson's (1/3)rd Rule (Funtions)",
-          link: "/method/composite",
+          link: "/method/numerical_integration/simpson_function",
         },
         {
-          title: "Composite Simpson's 3/8 Rule",
-          link: "/method/composite",
+          title: " Simpson's 3/8 Rule",
+          link: "/method/numerical_integration/simpson_third_rule",
         },
         {
           title: "Simpson's 3/8 Rule Functions",
-          link: "/method/composite",
+          link: "/method/numerical_integration/simpson_third_function",
         },
         {
           title: "Gaussian_Quadrature",
-          link: "/method/composite",
+          link: "/method/numerical_integration/gaussian_quadrature",
         },
       ],
     },
@@ -214,19 +214,19 @@ export async function getStaticProps(content) {
       content: [
         {
           title: " Euler's Method",
-          link: "/method/euler",
+          link: "/method/differential_equation/euler",
         },
         {
           title: " Modified Euler's Method",
-          link: "/method/modifiedeuler",
+          link: "/method/differential_equation/euler_modified",
         },
         {
           title: " Runge-Kutta 4th Order Method",
-          link: "/method/rungekutta",
+          link: "/method/differential_equation/runge_kutta",
         },
         {
           title: " Runge-Kutta 2nd Order Method",
-          link: "/methodrungekutta",
+          link: "/method/differential_equation/runge_kutta_modified",
         },
       ],
     },

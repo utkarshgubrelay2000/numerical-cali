@@ -5,12 +5,10 @@ import { Navbar } from "../../../component/Navbar";
 import Footer from "../../../component/Footer";
 import { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Modal from "@material-ui/core/Modal";
-import Backdrop from "@material-ui/core/Backdrop";
-import Fade from "@material-ui/core/Fade";
+
 
 import { TextField } from "@material-ui/core";
-import { EulerMethodSimple, LegrangeInterpolation } from "../../../utils/api";
+import { rungaKutaMethod3 } from "../../../utils/api";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -100,7 +98,7 @@ export default function Home(props) {
           n: parseFloat(n),
           equations: matrix,
         };
-        let res = await EulerMethodSimple(data);
+        let res = await rungaKutaMethod3(data);
         console.log(res.data);
         let array=[],array2=[]
           for (const [key, value] of Object.entries(res.data)) {
