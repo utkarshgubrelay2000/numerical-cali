@@ -151,7 +151,7 @@ export default function Home(props) {
                         <th className="m-0 p-0 matrix-head">X{index + 1}</th>
                         {item.map((i, ind) => {
                           return (
-                            <td className="m-0 p-0">
+                            <td key={index+ind} className="m-0 p-0">
                               <input
                                 placeholder={`${index}${ind}`}
                                 className="table-input"

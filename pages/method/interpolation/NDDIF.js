@@ -150,7 +150,7 @@ export default function Home(props) {
                         <th className="m-0 p-0 matrix-head">X{index + 1}</th>
                         {item.map((i, ind) => {
                           return (
-                            <td className="m-0 p-0">
+                            <td key={index+ind}className="m-0 p-0">
                               <input
                                 placeholder={`${index}${ind}`}
                                 className="table-input"
@@ -249,7 +249,7 @@ export default function Home(props) {
               />
               <p style={{ wordSpacing: "1px" }}>
                 {" "}
-                Newton's forward difference formula is a finite difference
+                Newton{"'"}s forward difference formula is a finite difference
                 identity giving an interpolated value between tabulated points.
                 This interpolation technique used when the interval difference
                 is same for all sequence of values.The formula states,

@@ -152,7 +152,7 @@ const [showTable,setShowTable]=useState(false)
                         </th>
                         {item.map((i, ind) => {
                           return (
-                            <td className="m-0 p-0">
+                            <td key={index+ind}className="m-0 p-0">
                               <input
                                 placeholder={`${index}${ind}`}
                                 className="table-input"
@@ -265,7 +265,7 @@ const [showTable,setShowTable]=useState(false)
                 className="mw-100"
               />
 
-<p style={{ wordSpacing: "1px" }}>          Newton's forward difference formula is a finite difference identity giving an interpolated value between tabulated points. This interpolation technique used when the interval difference is same for all sequence of values.The formula states,
+<p style={{ wordSpacing: "1px" }}>          Newton{"'"}s forward difference formula is a finite difference identity giving an interpolated value between tabulated points. This interpolation technique used when the interval difference is same for all sequence of values.The formula states,
 <br/>
 <img
                   src="../../assets/Newton Backward Difference Interpolation.png"

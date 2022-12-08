@@ -150,7 +150,7 @@ const [showTable,setShowTable]=useState(false)
                         </th>
                         {item.map((i, ind) => {
                           return (
-                            <td className="m-0 p-0">
+                            <td key={index+ind}className="m-0 p-0">
                               <input
                                 placeholder={`${index}${ind}`}
                                 className="table-input"
