@@ -118,7 +118,61 @@ export default function Home(props) {
   return (
     <div>
       <Navbar />
-
+      <Modal
+        aria-labelledby="transition-modal-title"
+        aria-describedby="transition-modal-description"
+        className={classes.modal}
+        open={open}
+        onClose={handleClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
+        }}
+      >
+        <Fade in={open}>
+          <div className={classes.paper} style={{ textAlign: "center" }}>
+            <label className="text-info bg-light p-2">
+              Note: Unfilled Values will be Treated as 0
+            </label>
+            <div
+              style={{ maxHeight: "400px" }}
+              className="table-responsive border"
+            >
+              <table className="table  text-md-nowrap  text-center mg-b-0">
+                <tbody>
+                  {matrix.map((item, index) => {
+                    return (
+                      <tr key={index}>
+                        <th className="m-0 p-0 matrix-head">X{index + 1}</th>
+                        {item.map((i, ind) => {
+                          return (
+                            <td key={index+ind}className="m-0 p-0">
+                              <input
+                                placeholder={`${index}${ind}`}
+                                className="table-input"
+                                onChange={(e) => handleChange(index, ind, e)}
+                              />
+                            </td>
+                          );
+                        })}
+                      </tr>
+                    );
+                  })}{" "}
+                </tbody>
+              </table>
+              <div className="text-center mt-4"></div>
+            </div>
+            <button
+              onClick={submitHandler}
+              type="submit"
+              className="cta-btn cta-small"
+            >
+              Done
+            </button>
+          </div>
+        </Fade>
+      </Modal>
       <div className="container  method-container">
         {/* Highlight SVG Background */}
         <div className="row calulator-div ">
