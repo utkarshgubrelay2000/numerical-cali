@@ -102,10 +102,14 @@ const [showTable,setShowTable]=useState(false)
       
       let res=await simpsonThirdRuleFunction(data)
       console.log(res.data);
-      //setTable(res.data.table);
+      if(res.error){
+        toast.error("Something went wrong")
+      }
+      else{
+
       setRoot(res.data.root);
       setShowTable(true);
-
+      }
     } } catch (error) {
     
         //  console.log(error.response);

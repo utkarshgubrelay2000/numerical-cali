@@ -101,10 +101,14 @@ const [showTable,setShowTable]=useState(false)
       let data = { lower: parseFloat(a), upper: parseFloat(b),n:parseFloat(n), func: equation.toLowerCase() };
       
       let res=await TrapezoidalRule(data)
-      console.log(res.data);
-      //setTable(res.data.table);
+      if(res.error){
+        toast.error("Something went wrong")
+      }
+      else{
+
       setRoot(res.data.root);
       setShowTable(true);
+      }
 
     } } catch (error) {
     

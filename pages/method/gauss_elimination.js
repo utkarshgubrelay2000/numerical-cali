@@ -100,12 +100,18 @@ const [showTable,setShowTable]=useState(false)
         n: parseFloat(n),
         equations:matrix
       };
+
       let res=await EliminationMethod(data)
+      if(res.error){
+        toast.error("Something went wrong")
+      }
+      else{
+
       console.log(res.data);
       setTable(res.data.table);
       setRoot(res.data.root);
       setShowTable(true);
-
+      }
     } } catch (error) {
     
         //  console.log(error.response);

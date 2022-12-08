@@ -97,11 +97,15 @@ export default function Home(props) {
           equations: matrix,
         };
         let res = await EliminationMethod(data);
-        console.log(res.data);
+        if(res.error){
+          toast.error("Something went wrong")
+        }
+        else{
+  
         setTable(res.data.table);
         setRoot(res.data.root);
       setShowTable(true);
-
+        }
       }
     } catch (error) {
       //  console.log(error.response);

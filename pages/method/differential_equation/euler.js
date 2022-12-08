@@ -100,6 +100,11 @@ export default function Home(props) {
           num:parseFloat(num),xn:parseFloat(xn) };
         let res = await EulerMethodSimple(data);
         console.log(res.data);
+        if(res.error){
+          toast.error("Something went wrong")
+        }
+        else{
+  
         let array=[],array2=[]
           for (const [key, value] of Object.entries(res.data)) {
           //  console.log(`${key}: ${value}`);
@@ -108,7 +113,7 @@ export default function Home(props) {
           }
           setTable(array)
           setTable2(array2)
-        setShowTable(true);
+        setShowTable(true);}
       }
     } catch (error) {
       //  console.log(error.response);

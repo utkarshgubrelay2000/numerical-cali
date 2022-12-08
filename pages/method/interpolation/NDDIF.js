@@ -97,10 +97,14 @@ export default function Home(props) {
           equations: matrix,
         };
         let res = await NDDIF(data);
-        console.log(res.data);
+        if(res.error){
+          toast.error("Something went wrong")
+        }
+        else{
+     console.log(res.data);
         setTable(res.data.table);
         setRoot(res.data.root);
-        setShowTable(true);
+        setShowTable(true);}
       }
     } catch (error) {
       //  console.log(error.response);

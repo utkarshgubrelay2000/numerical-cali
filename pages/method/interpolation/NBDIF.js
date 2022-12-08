@@ -101,10 +101,15 @@ const [showTable,setShowTable]=useState(false)
         equations:matrix
       };
       let res=await NBDIF(data)
-      console.log(res.data);
+      if(res.error){
+        toast.error("Something went wrong")
+      }
+      else{
+
       setTable(res.data.table);
       setRoot(res.data.root);
       setShowTable(true);
+      }
     } } catch (error) {
     
         //  console.log(error.response);
