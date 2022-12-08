@@ -234,7 +234,13 @@ export default function Home(props) {
                                   return (
                                     <tr key={index}>
                                       <th scope="row">X{index + 1}</th>
-                                      <td>{item}</td>
+                                      {item.map((i, ind) => {
+                                        return (
+                                          <td key={ind+index} className="m-0 p-0">
+                                            {i}
+                                          </td>
+                                        );
+                                      })}
                                     </tr>
                                   );
                                 })}{" "}
