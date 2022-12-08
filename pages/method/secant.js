@@ -111,8 +111,8 @@ const [showTable,setShowTable]=useState(false)
       }
       else{
 
-      setTable(res.data.table);
-      setRoot(res.data.root);
+        setTable(res.data?.arr);
+        setRoot(res.data?.root);
       setShowTable(true);setResponse(true)
       }
     } } catch (error) {
@@ -230,6 +230,19 @@ const [showTable,setShowTable]=useState(false)
                     </table>
                   </div>
                 </div> 
+                <div>
+                    <h6 className="main-content-label mb-1">Answer</h6>
+                  </div>
+                  <h6 className='root-h6'
+                        style={{
+                          border: "1px black solid",
+                          padding: "10px",
+                          margin: "auto",
+                        }}
+                      >
+                  Integral
+                           {"  "}: {root}
+                      </h6>
                 <div className='text-center'>
 
 <button onClick={()=>setShowGraph("Line")} className="btn btn-primary m-3">

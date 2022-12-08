@@ -108,8 +108,8 @@ export default function Home(props) {
         if(res.error){     toast.error(res?.data?.response?.data)}
         else{
   
-        setTable(res.data.table);
-        setRoot(res.data.root);
+          setTable(res.data?.arr);
+          setRoot(res.data?.root);
       setShowTable(true);setResponse(true)
         }
       }
@@ -222,6 +222,19 @@ export default function Home(props) {
                     </table>
                           </div>
                         </div>
+                        <div>
+                    <h6 className="main-content-label mb-1">Answer</h6>
+                  </div>
+                  <h6 className='root-h6'
+                        style={{
+                          border: "1px black solid",
+                          padding: "10px",
+                          margin: "auto",
+                        }}
+                      >
+                  Integral
+                           {"  "}: {root}
+                      </h6>
                         <div className="text-center">
                           <button
                             onClick={() => setShowGraph("Line")}

@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseurl='http://localhost:8000'
+const baseurl='http://100.24.3.226:8000'
 export const SeidalMethod=async(data)=>{
     try {
         let res=  await axios
