@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseurl='https//backend.numeric-calzy.me'
+const baseurl='https://backend.numeric-calzy.me'
 export const SeidalMethod=async(data)=>{
     try {
         let res=  await axios

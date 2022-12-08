@@ -26,6 +26,12 @@ body {
 .cta-small{
 	width: 20% !important;
 }
+@media screen and (max-width: 768px) {
+  .cta-small{
+	width: 100% !important;
+}
+	
+}
 .cta-btn-a{
 
 	border-radius: 5px;
