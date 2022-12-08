@@ -76,7 +76,12 @@ export default function Home(props) {
 
       let res=await BisectionMethod(data)
      //console.log(res);
-      if(res.error){     toast.error(res?.data?.response?.data)
+      if(res.error){  
+        if(res?.data?.response?.status===500){
+          toast.error("Something went wrong")}
+           else{
+             toast.error(res?.data?.response?.data)
+           }
       }
       else{
 

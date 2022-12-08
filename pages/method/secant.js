@@ -38,7 +38,6 @@ export default function Home() {
   const [showGraph, setShowGraph] = useState(undefined);
   const [response, setResponse] = useState(false);
 
-
   function validation() {
     if (!a) {
       //  console.log("no email");
@@ -75,10 +74,14 @@ export default function Home() {
 
         let res = await secantMethod(data);
         if (res.error) {
-          toast.error(res?.data?.response?.data);
+          if (res?.data?.response?.status === 500) {
+            toast.error("Something went wrong");
+          } else {
+            toast.error(res?.data?.response?.data);
+          }
         } else {
           setTable(res.data?.arr);
-                 setRoot(res.data?.Root);
+          setRoot(res.data?.Root);
           setShowTable(true);
           setResponse(true);
         }
@@ -152,7 +155,8 @@ export default function Home() {
 
                 <div className="form-group mt-2 col-8 ">
                   <button className="cta-btn" onClick={submitHandler}>
-                   Calculate                    </button>
+                    Calculate{" "}
+                  </button>
                 </div>
                 <div className="col-md-12 table-div">
                   <div className="card">

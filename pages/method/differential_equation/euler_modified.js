@@ -103,7 +103,11 @@ export default function Home(props) {
         let res = await EulerMethodModified(data);
         console.log(res.data);
         if(res.error){
-          toast.error(res?.data?.response?.data)
+          if(res?.data?.response?.status===500){
+            toast.error("Something went wrong")}
+             else{
+               toast.error(res?.data?.response?.data)
+             }
         }
         else{
   

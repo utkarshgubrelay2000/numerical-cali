@@ -25,12 +25,8 @@ export default function Home(props) {
   
 
   function validation() {
-    if (!a) {
-      //  console.log("no email");
-      toast.error("Please enter the a");
-      return false;
-    } else if (!b) {
-      toast.error("Please enter the b");
+     if (!b) {
+      toast.error("Please enter the Initial guess value");
       return false;
     } else if (!equation) {
       toast.error("Please enter the equation");
@@ -55,7 +51,14 @@ export default function Home(props) {
         let data = { b: parseFloat(b), equation: equation.toLowerCase() };
 
         let res = await NewtonsMethod(data);
-        if(res.error){     toast.error(res?.data?.response?.data)}
+        if(res.error){   
+         
+          if(res?.data?.response?.status===500){
+           toast.error("Something went wrong")}
+            else{
+              toast.error(res?.data?.response?.data)
+            }
+          }
         else{
   
           setTable(res.data?.arr);
@@ -85,7 +88,7 @@ export default function Home(props) {
           <div className="col-md-12 m-auto method-div">
             <h1 className="mb-3 header-text ">
               {/* <strong>Grow your Linkedin Profile with us.</strong> */}
-              <strong>Bisection Method</strong>
+              <strong>Newton Method</strong>
             </h1>
           </div>
 

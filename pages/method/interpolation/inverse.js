@@ -100,7 +100,13 @@ export default function Home(props) {
           equations: matrix,
         };
         let res = await inverseInterpolation(data);
-        if(res.error){     toast.error(res?.data?.response?.data)}
+        if(res.error){   
+          if(res?.data?.response?.status===500){
+            toast.error("Something went wrong")}
+             else{
+               toast.error(res?.data?.response?.data)
+             }
+          }
         else{
   
         setTable(res.data.table);

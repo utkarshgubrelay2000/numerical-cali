@@ -70,7 +70,11 @@ const [showTable,setShowTable]=useState(false)
       
       let res=await Gaussian_Quadrature(data)
       console.log(res.data);
-      if(res.error){     toast.error(res?.data?.response?.data)
+      if(res.error){     if(res?.data?.response?.status===500){
+        toast.error("Something went wrong")}
+         else{
+           toast.error(res?.data?.response?.data)
+         }
       }
       else{
 
