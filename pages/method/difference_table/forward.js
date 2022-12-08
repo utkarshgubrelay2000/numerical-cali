@@ -102,6 +102,8 @@ export default function Home(props) {
           setTable(res.data);
           setShowTable(true);
           setResponse(true);
+          //console.log(res.data);
+          handleClose();
         }
       }
     } catch (error) {

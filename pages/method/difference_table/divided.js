@@ -104,6 +104,7 @@ export default function Home(props) {
     
           setShowTable(true);
           setResponse(true);
+          handleClose();
         }
       }
     } catch (error) {
