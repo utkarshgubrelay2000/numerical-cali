@@ -8,6 +8,7 @@ import {
   fixediterationMethod,
 } from "../../utils/api";
 import { TextField } from "@material-ui/core";
+import { useState } from "react";
 
 export default function Home() {
   const [a, setA] = useState("");
