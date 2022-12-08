@@ -112,10 +112,10 @@ export default function Home(props) {
 
       }
     } catch (error) {
-      //  console.log(err.response);
+      //  console.log(error.response);
 
-      if (err.response.status === 400) {
-        toast.error(err.response.data);
+      if (error.response.status === 400) {
+        toast.error(error.response.data);
       } else {
         toast.error("Something went wrong");
       }

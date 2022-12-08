@@ -29,7 +29,7 @@ export default function Home(props) {
   const [b, setB] = useState("");
   const [open, setOpen] = useState(false);
   const classes = useStyles();
-const [showTable,setShowTable]=useState(false)
+  const [showTable,setShowTable]=useState(false)
   const [equation, setEquation] = useState("");
   const [table, setTable] = useState([]);
   const [root, setRoot] = useState("");
@@ -107,17 +107,23 @@ const [showTable,setShowTable]=useState(false)
       let data = { a: parseFloat(a), b: parseFloat(b), equation: equation.toLowerCase() };
 
       let res=await BisectionMethod(data)
-      console.log(res.data);
-      setTable(res.data.table);
-      setRoot(res.data.root);
-      setShowTable(true);
+     
+      if(res.error){
+        toast.error("Something went wrong")
+      }
+      else{
+
+        setTable(res.data.table);
+        setRoot(res.data.root);
+        setShowTable(true);
+      }
 
     } } catch (error) {
     
-        //  console.log(err.response);
+        //  console.log(error.response);
       
-        if (err.response.status === 400) {
-         toast.error(err.response.data);
+        if (error.response.status === 400) {
+         toast.error(error.response.data);
         } else {
           toast.error("Something went wrong");
         }
@@ -161,7 +167,7 @@ const [showTable,setShowTable]=useState(false)
                   <div className="form-group  col-6 ">
                   <TextField id="standard-basic" label="Value of B" variant="filled" 
                       onChange={(e) => setB(e.target.value)}
-                      value={a}
+                      value={b}
                       name="example-text-input"
                       placeholder="Value of B"
                     />

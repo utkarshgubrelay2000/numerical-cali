@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseurl='https://numerical-methods-calculator.herokuapp.com'
+const baseurl='http://100.24.3.226:8000'
 export const SeidalMethod=async(data)=>{
     try {
         let res=  await axios
@@ -40,7 +40,7 @@ export const JacobiMethod=async(data)=>{
 export const BisectionMethod=async(data)=>{
     try {
         let res=  await axios
-        .post(`${baseurl}/Gauss-Jacobi-Method`, data) 
+        .post(`${baseurl}/Bisection-method`, data) 
         return res
     } catch (error) {
         return {error:true,data:error}

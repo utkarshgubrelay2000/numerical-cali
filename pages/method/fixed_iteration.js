@@ -109,17 +109,21 @@ export default function Home(props) {
         };
 
         let res = await fixediterationMethod(data);
-        console.log(res.data);
+        if(res.error){
+          toast.error("Something went wrong")
+        }
+        else{
         setTable(res.data.table);
         setRoot(res.data.root);
       setShowTable(true);
+        }
 
       }
     } catch (error) {
-      //  console.log(err.response);
+      //  console.log(error.response);
 
-      if (err.response.status === 400) {
-        toast.error(err.response.data);
+      if (error.response.status === 400) {
+        toast.error(error.response.data);
       } else {
         toast.error("Something went wrong");
       }
