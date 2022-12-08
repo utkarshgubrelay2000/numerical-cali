@@ -114,7 +114,7 @@ export default function Home(props) {
                 <h5>
                   <strong>Equation</strong>
                 </h5>
-                <div className="form-group col-6 m-auto">
+                <div className="form-group col-6">
                   <TextField
                     id="standard-basic"
                     label="Lower Limit"
