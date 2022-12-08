@@ -233,9 +233,9 @@ export default function Home(props) {
                         id="standard-basic"
                         label="Equation"
                         variant="filled"
-                        type="number"
+                        type="text"
                         onChange={(e) => {
-                            setxn(e.target.value);
+                            setEquation(e.target.value);
                         }}
                         name="example-text-input"
                          placeholder="2x^2+3y"
