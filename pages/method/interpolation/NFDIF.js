@@ -163,9 +163,12 @@ export default function Home(props) {
                   />
                 </div>
                 <div className="form-group mt-2 col-12 ">
-                  <button className="cta-btn" onClick={() => submitHandler()}>
-                    Create
-                  </button>
+                  <button className="cta-btn" onClick={() => {
+                        createMatrix();
+                        handleOpen();
+                      }}
+                    >
+                   Calculate                    </button>
                 </div>
                 <div className="col-md-12 table-div">
                   <div className="card">

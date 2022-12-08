@@ -153,8 +153,7 @@ const [showTable,setShowTable]=useState(false)
                       onClick={() => submitHandler()}
 
                     >
-                      Create
-                    </button>
+                     Calculate                      </button>
                     </div>
                     <div className="col-md-12 table-div">
               <div className="card">

@@ -193,7 +193,7 @@ const [showTable,setShowTable]=useState(false)
                   <div className="form-group mt-2 col-12 ">
                   <button
                       className="cta-btn"
-                      onClick={() =>  submitHandler()} >
+                  onClick={submitHandler} >
                       Submit
                     </button>
                     </div>

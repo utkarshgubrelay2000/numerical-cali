@@ -225,8 +225,7 @@ export default function Home(props) {
                       handleOpen();
                     }}
                   >
-                    Create
-                  </button>
+                   Calculate                    </button>
                 </div>
                 <div className="col-md-12 table-div">
                   {showTable && (
