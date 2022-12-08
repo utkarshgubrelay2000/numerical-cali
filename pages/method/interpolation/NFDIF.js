@@ -105,6 +105,7 @@ const [showTable,setShowTable]=useState(false)
       console.log(res.data);
       setTable(res.data.table);
       setRoot(res.data.root);
+      setShowTable(true);
     } } catch (error) {
     
         //  console.log(err.response);
@@ -239,31 +240,10 @@ const [showTable,setShowTable]=useState(false)
               <div className="card">
               {showTable &&
                 <div className="card-body">
-                  <div>
-                    <h6 className="main-content-label mb-1">Answer</h6>
-                  </div>
+        
                   <div className=" bg-light  border ">
-                  
-                    <table className="table  text-md-nowrap table-hover mg-b-0">
-                      <thead>
-                        <tr>
-                          <th>Value</th>
-                          <th>Answer</th>
-                         
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {table.map((item, index) => {
-                          return (
-                            <tr key={index}>
-                              <th scope="row">X{index + 1}</th>
-                              <td>{item}</td>
-                              
-                            </tr>
-                          );
-                        })}{" "}
-                      </tbody>
-                    </table>
+                  <strong>Integral : {root}
+                 </strong>
                   </div>
                 </div>
                     }

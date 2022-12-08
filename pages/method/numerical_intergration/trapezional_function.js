@@ -1,4 +1,5 @@
 import {toast} from 'react-toastify'
+
 import { Navbar } from "../../../component/Navbar";
 
 import Footer from "../../../component/Footer";
@@ -7,8 +8,10 @@ import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
+
 import { TextField } from '@material-ui/core';
-import { inverseInterpolation } from '../../../utils/api';
+import {  TrapezoidalFunction } from '../../../utils/api';
+
 const useStyles = makeStyles((theme) => ({
   modal: {
     display: "flex",
@@ -95,15 +98,14 @@ const [showTable,setShowTable]=useState(false)
       
    
     if (validation()) {
-      let data = {
-        n: parseFloat(n),
-        equations:matrix
-      };
-      let res=await inverseInterpolation(data)
+      let data = { lower: parseFloat(a), upper: parseFloat(b),n:parseFloat(n), func: equation.toLowerCase() };
+      
+      let res=await TrapezoidalRule(data)
       console.log(res.data);
-      setTable(res.data.table);
+      //setTable(res.data.table);
       setRoot(res.data.root);
       setShowTable(true);
+
     } } catch (error) {
     
         //  console.log(err.response);
@@ -174,7 +176,7 @@ const [showTable,setShowTable]=useState(false)
           <div className="col-md-12 m-auto method-div">
             <h1 className="mb-3 header-text ">
               {/* <strong>Grow your Linkedin Profile with us.</strong> */}
-              <strong>Inverse Interpolation</strong>
+              <strong>Trapezoidal Rule</strong>
 
             </h1>
           </div>
@@ -188,17 +190,17 @@ const [showTable,setShowTable]=useState(false)
                   <div className="form-group col-6 m-auto">
                   <TextField
                     id="standard-basic"
-                    label="No of Equations(n)"
+                    label="Lower Limit"
                     variant="filled"
                     type="number"
                       onChange={(e) => {
-                        setN(e.target.value);
-                        setN2(e.target.value + 1);
+                        setA(e.target.value);
                       }}
                   
                       name="example-text-input"
                      // placeholder="No of Equations(n)"
                     />
+                    
                      
                      
                  
@@ -207,42 +209,87 @@ const [showTable,setShowTable]=useState(false)
                   <div className="form-group col-6 m-auto">
                   <TextField
                     id="standard-basic"
-                    label="Value of B"
+                    label="Upper Limit"
                     variant="filled"
                     type="number"
                       onChange={(e) => {
                         setB(e.target.value);
-                  
+                      
                       }}
                   
                       name="example-text-input"
                      // placeholder="No of Equations(n)"
                     />
+                    
                      
                      
                  
                  
                   </div>
+                  <div className="form-group col-6 m-auto">
+                  <TextField
+                    id="standard-basic"
+                    label="No. of sub-intervals:                    "
+                    variant="filled"
+                    type="number"
+                      onChange={(e) => {
+                        setN(e.target.value);
+                      }}
+                  
+                      name="example-text-input"
+                     // placeholder="No of Equations(n)"
+                    />
+                    
+                     
+                     
+                 
+                 
+                  </div>
+                  <div className="form-group col-12 m-auto">
+                  <TextField
+                    id="standard-basic"
+                    label="No of Equations(n)"
+                    variant="filled"
+                    type="number"
+                      onChange={(e) => {
+                        setEquation(e.target.value);
+                        
+                      }}
+                  
+                      name="example-text-input"
+                     // placeholder="No of Equations(n)"
+                    />
+                    
+                     
+                     
+                 
+                 
+                  </div>
+               
                   <div className="form-group mt-2 col-12 ">
                   <button
                       className="cta-btn"
-                      onClick={() => {
-                        createMatrix();
-                        handleOpen();
-                      }}
-                    >
-                      Create
+                      onClick={() =>  submitHandler()} >
+                      Submit
                     </button>
                     </div>
                     <div className="col-md-12 table-div">
               <div className="card">
               {showTable &&
                 <div className="card-body">
-        
-                  <div className=" bg-light  border ">
-                  <strong>Integral : {root}
-                 </strong>
+                  <div>
+                    <h6 className="main-content-label mb-1">Answer</h6>
                   </div>
+                  <h6 className='root-h6'
+                        style={{
+                          border: "1px black solid",
+                          padding: "10px",
+                          margin: "auto",
+                        }}
+                      >
+                  Integral
+                           {"  "}: {root}
+                      </h6>
                 </div>
                     }
   </div>
@@ -261,22 +308,16 @@ const [showTable,setShowTable]=useState(false)
               />
 
               <p style={{ wordSpacing: "1px" }}>
-                In mathematics, the Gaussian elimination method is known as the
-                row reduction algorithm for solving linear equations systems. It
-                consists of a sequence of operations performed on the
-                corresponding matrix of coefficients. We can also use this
-                method to estimate either of the following:
-                <br />
-                - The rank of the given matrix
-                <br />
-                - The determinant of a square matrix
-                <br />- The inverse of an invertible matrix To perform row
-                reduction on a matrix, we have to complete a sequence of
-                elementary row operations to transform the matrix till we get 0s
-                (i.e., zeros) on the lower left-hand corner of the matrix as
-                much as possible. That means the obtained matrix should be an
-                upper triangular matrix.
-              </p>
+                        Trapezoidal Difference Method : The Trapezoidal Difference Method is used to find the
+                        roots of a polynomial equation. It separates the
+                        interval and subdivides the interval in which the root
+                        of the equation lies. The principle behind this method
+                        is the intermediate theorem for continuous functions. It
+                        works by narrowing the gap between the positive and
+                        negative intervals until it closes in on the correct
+                        answer. The Trapezoidal Difference Method is also known as interval
+                        halving method, root-finding method, binary search
+                        method or dichotomy method.  </p>
             </div>
           </div>
         </div>
