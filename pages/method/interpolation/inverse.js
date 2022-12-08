@@ -97,7 +97,7 @@ export default function Home(props) {
       if (validation()) {
         let data = {
           n: parseFloat(n),
-          x: parseFloat(b),
+          y: parseFloat(b),
           arrayX:matrix,
           arrayY:matrixY,
           
@@ -223,7 +223,7 @@ export default function Home(props) {
                 <div className="form-group col-6 m-auto">
                   <TextField
                     id="standard-basic"
-                    label="Value of X"
+                    label="Value of Y"
                     variant="filled"
                     type="number"
                     onChange={(e) => {
