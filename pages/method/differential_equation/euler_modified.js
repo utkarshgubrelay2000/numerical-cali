@@ -30,6 +30,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 export default function Home(props) {
   const [a, setA] = useState("");
+  const [showTable,setShowTable]=useState(false)
+
   const [x0, setx0] = useState("");
   const [y0, sety0] = useState("");
   const [xn, setxn] = useState("");

@@ -34,8 +34,8 @@ export default function Home(props) {
   const [y0, sety0] = useState("");
   const [xn, setxn] = useState("");
   const [equation, setEquation] = useState("");
-  const [toastColor, setToastColor] = useState("green");
-  const [toastText, setToastText] = useState("");
+  const [showTable,setShowTable]=useState(false)
+
   const [table, setTable] = useState([]);
   const [table2, setTable2] = useState([]);
   const [root, setRoot] = useState("");
