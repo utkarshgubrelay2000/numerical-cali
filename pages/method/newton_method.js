@@ -155,7 +155,7 @@ export default function Home(props) {
                     type="text"
                     //  className="form-control"
                     onChange={(e) => setB(e.target.value)}
-                    value={a}
+                    value={b}
                     name="example-text-input"
                     label="Initial Guess Value"
                   />

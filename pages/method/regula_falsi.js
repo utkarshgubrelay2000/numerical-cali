@@ -164,7 +164,7 @@ export default function Home(props) {
                     label="Value of B"
                     variant="filled"
                     onChange={(e) => setB(e.target.value)}
-                    value={a}
+                    value={b}
                     name="example-text-input"
                     placeholder="Value of B"
                   />

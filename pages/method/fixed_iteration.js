@@ -168,7 +168,7 @@ export default function Home(props) {
                     label="f(x)"
                     variant="filled"
                     onChange={(e) => setB(e.target.value)}
-                    value={a}
+                    value={b}
                     placeholder=" x^2+sin(x)+1"
 
                    // placeholder="Value of B"

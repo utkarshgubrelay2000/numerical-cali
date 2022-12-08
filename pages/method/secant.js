@@ -165,7 +165,7 @@ const [showTable,setShowTable]=useState(false)
                   <div className="form-group  col-6 ">
                   <TextField id="standard-basic" label="Value of B" variant="filled" 
                       onChange={(e) => setB(e.target.value)}
-                      value={a}
+                      value={b}
                       name="example-text-input"
                       placeholder="Value of B"
                     />
