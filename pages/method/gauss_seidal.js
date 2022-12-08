@@ -258,28 +258,26 @@ const [showTable,setShowTable]=useState(false)
             </div>
             <div className="col-md-5 img-div ">
               <img
-                src="../assets/Fixed.gif"
+                src="../assets/guass_seidal.jpg"
                 alt="Fluxo Social Media Marketing Template"
                 className="mw-100"
               />
 
-              <p style={{ wordSpacing: "1px" }}>
-                In mathematics, the Gaussian elimination method is known as the
-                row reduction algorithm for solving linear equations systems. It
-                consists of a sequence of operations performed on the
-                corresponding matrix of coefficients. We can also use this
-                method to estimate either of the following:
-                <br />
-                - The rank of the given matrix
-                <br />
-                - The determinant of a square matrix
-                <br />- The inverse of an invertible matrix To perform row
-                reduction on a matrix, we have to complete a sequence of
-                elementary row operations to transform the matrix till we get 0s
-                (i.e., zeros) on the lower left-hand corner of the matrix as
-                much as possible. That means the obtained matrix should be an
-                upper triangular matrix.
-              </p>
+              <p style={{ wordSpacing: "1px" }}>                 Gauss–Seidel method is an improved form of Jacobi method, also known as the successive displacement method. This method is named after Carl Friedrich Gauss (Apr. 1777–Feb. 1855) and Philipp Ludwig von Seidel (Oct. 1821–Aug. 1896).
+The reason the Gauss–Seidel method is commonly known as the successive displacement method is because the second unknown is determined from the first unknown in the current iteration, the third unknown is determined from the first and second unknowns, etc.
+<strong>
+                          {" "}
+                          <br /> Assumption:  :<br />
+                          </strong> 
+                      <ul>
+                        <li>
+                        The system of linear equations to be solved, must have a unique solution.
+                        </li>
+                       
+                     
+                        <li>There should not be any zeros on the main diagonal of the coefficient matrix A.In case, there exist zeros on its main diagonal, then rows must be interchanged to obtain a
+coefficient matrix that does not have zero entries on the main diagonal.</li>{" "}
+                      </ul> </p>
             </div>
           </div>
         </div>

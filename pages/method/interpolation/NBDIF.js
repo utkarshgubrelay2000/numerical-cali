@@ -260,23 +260,17 @@ const [showTable,setShowTable]=useState(false)
                 className="mw-100"
               />
 
-              <p style={{ wordSpacing: "1px" }}>
-                In mathematics, the Gaussian elimination method is known as the
-                row reduction algorithm for solving linear equations systems. It
-                consists of a sequence of operations performed on the
-                corresponding matrix of coefficients. We can also use this
-                method to estimate either of the following:
-                <br />
-                - The rank of the given matrix
-                <br />
-                - The determinant of a square matrix
-                <br />- The inverse of an invertible matrix To perform row
-                reduction on a matrix, we have to complete a sequence of
-                elementary row operations to transform the matrix till we get 0s
-                (i.e., zeros) on the lower left-hand corner of the matrix as
-                much as possible. That means the obtained matrix should be an
-                upper triangular matrix.
-              </p>
+<p style={{ wordSpacing: "1px" }}>          Newton's forward difference formula is a finite difference identity giving an interpolated value between tabulated points. This interpolation technique used when the interval difference is same for all sequence of values.The formula states,
+<br/>
+<img
+                  src="../../assets/Newton Backward Difference Interpolation.png"
+                  alt="First slide"
+                  className="mw-100 m-3"
+                />
+<br/>
+
+This formula is particularly useful for interpolating the values of f(x) near the beginning of the set of values given. h is called the interval of difference and u = ( x – a ) / h, Here a is the first term.
+               </p>
             </div>
           </div>
         </div>

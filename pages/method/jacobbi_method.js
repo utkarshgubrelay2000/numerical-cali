@@ -250,28 +250,30 @@ export default function Home(props) {
             </div>
             <div className="col-md-5 img-div ">
               <img
-                src="../assets/Fixed.gif"
+                src="../assets/jacobbi.gif"
                 alt="Fluxo Social Media Marketing Template"
                 className="mw-100"
               />
-
-              <p style={{ wordSpacing: "1px" }}>
-                In mathematics, the Gaussian elimination method is known as the
-                row reduction algorithm for solving linear equations systems. It
-                consists of a sequence of operations performed on the
-                corresponding matrix of coefficients. We can also use this
-                method to estimate either of the following:
-                <br />
-                - The rank of the given matrix
-                <br />
-                - The determinant of a square matrix
-                <br />- The inverse of an invertible matrix To perform row
-                reduction on a matrix, we have to complete a sequence of
-                elementary row operations to transform the matrix till we get 0s
-                (i.e., zeros) on the lower left-hand corner of the matrix as
-                much as possible. That means the obtained matrix should be an
-                upper triangular matrix.
-              </p>
+    <p style={{ wordSpacing: "1px" }}>
+                      Carl Gustav Jacob Jacobi (1804-1851) gave an indirect method for finding the
+solution of a system of linear equations, which is based on the successive better
+approximations of the values of the unknowns, using an iterative procedure. The
+sufficient condition for the convergence of Gauss Jacobi method to solve
+Ax=b is that the coefficient matrix A is strictly diagonally row dominant.
+<strong>
+                          {" "}
+                          <br /> Assumption:  :<br />
+                          </strong> 
+                      <ul>
+                        <li>
+                        The system of linear equations to be solved, must have a unique solution.
+                        </li>
+                       
+                     
+                        <li>There should not be any zeros on the main diagonal of the coefficient matrix A.In case, there exist zeros on its main diagonal, then rows must be interchanged to obtain a
+coefficient matrix that does not have zero entries on the main diagonal.</li>{" "}
+                      </ul>
+                       </p>
             </div>
           </div>
         </div>

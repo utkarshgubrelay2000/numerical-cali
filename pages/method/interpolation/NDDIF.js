@@ -1,14 +1,14 @@
-import {toast} from 'react-toastify'
+import { toast } from "react-toastify";
 import { Navbar } from "../../../component/Navbar";
 
 import Footer from "../../../component/Footer";
-import { useState } from 'react';
+import { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
-import { TextField } from '@material-ui/core';
-import { NDDIF } from '../../../utils/api';
+import { TextField } from "@material-ui/core";
+import { NDDIF } from "../../../utils/api";
 const useStyles = makeStyles((theme) => ({
   modal: {
     display: "flex",
@@ -20,9 +20,9 @@ const useStyles = makeStyles((theme) => ({
     border: "2px solid #000",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
-    width:'60%', overflowX: 'hidde',
-    overflowY: 'auto',
-  
+    width: "60%",
+    overflowX: "hidde",
+    overflowY: "auto",
   },
 }));
 export default function Home(props) {
@@ -30,7 +30,7 @@ export default function Home(props) {
   const [b, setB] = useState("");
   const [open, setOpen] = useState(false);
   const classes = useStyles();
-const [showTable,setShowTable]=useState(false)
+  const [showTable, setShowTable] = useState(false);
   const [equation, setEquation] = useState("");
   const [table, setTable] = useState([]);
   const [root, setRoot] = useState("");
@@ -49,12 +49,12 @@ const [showTable,setShowTable]=useState(false)
   const handleChange = (row, column, event) => {
     let mainMat = [...matrix];
     let copy = [];
-    copy=[...matrix[row]]
-    copy[column] = parseInt(event.target.value); 
+    copy = [...matrix[row]];
+    copy[column] = parseInt(event.target.value);
     // setMatrix(copy);
-    mainMat[row]=copy
+    mainMat[row] = copy;
     console.log(mainMat);
-    setMatrix(mainMat)
+    setMatrix(mainMat);
   };
   const createMatrix = () => {
     let ele = [];
@@ -72,51 +72,48 @@ const [showTable,setShowTable]=useState(false)
   };
 
   function validation() {
-   if (!n) {
+    if (!n) {
       //  console.log("no email");
-  toast.error("Please enter the number of equation");
+      toast.error("Please enter the number of equation");
       return false;
-    }  else {
+    } else {
       return true;
     }
   }
 
   const clearHandler = () => {
-
     setEquation("");
     setRoot("");
     setTable([]);
     setResponse(false);
   };
 
-  const submitHandler =async (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
     try {
-      
-   
-    if (validation()) {
-      let data = {
-        n: parseFloat(n),
-        equations:matrix
-      };
-      let res=await NDDIF(data)
-      console.log(res.data);
-      setTable(res.data.table);
-      setRoot(res.data.root);
-      setShowTable(true);
-    } } catch (error) {
-    
-        //  console.log(err.response);
-      
-        if (err.response.status === 400) {
-         toast.error(err.response.data);
-        } else {
-          toast.error("Something went wrong");
-        }
-       
-        //sn /a/b/f(m)/ f(m)*f(a)/ root
+      if (validation()) {
+        let data = {
+          n: parseFloat(n),
+          equations: matrix,
+        };
+        let res = await NDDIF(data);
+        console.log(res.data);
+        setTable(res.data.table);
+        setRoot(res.data.root);
+        setShowTable(true);
       }
+    } catch (error) {
+      //  console.log(err.response);
+
+      if (err.response.status === 400) {
+        toast.error(err.response.data);
+      } else {
+        toast.error("Something went wrong");
+      }
+
+      //sn /a/b/f(m)/ f(m)*f(a)/ root
     }
+  };
   return (
     <div>
       <Navbar />
@@ -133,17 +130,20 @@ const [showTable,setShowTable]=useState(false)
         }}
       >
         <Fade in={open}>
-          <div className={classes.paper} style={{textAlign:"center"}}>
-            <label className='text-info bg-light p-2'>Note: Unfilled Values will be Treated as 0</label>
-            <div style={{maxHeight:'400px'}} className="table-responsive border">
-              <table  className="table  text-md-nowrap  text-center mg-b-0">
+          <div className={classes.paper} style={{ textAlign: "center" }}>
+            <label className="text-info bg-light p-2">
+              Note: Unfilled Values will be Treated as 0
+            </label>
+            <div
+              style={{ maxHeight: "400px" }}
+              className="table-responsive border"
+            >
+              <table className="table  text-md-nowrap  text-center mg-b-0">
                 <tbody>
                   {matrix.map((item, index) => {
                     return (
                       <tr key={index}>
-                        <th className="m-0 p-0 matrix-head">
-                        X{index + 1}
-                        </th>
+                        <th className="m-0 p-0 matrix-head">X{index + 1}</th>
                         {item.map((i, ind) => {
                           return (
                             <td className="m-0 p-0">
@@ -162,9 +162,13 @@ const [showTable,setShowTable]=useState(false)
               </table>
               <div className="text-center mt-4"></div>
             </div>
-          <button onClick={submitHandler} type="submit" className="cta-btn cta-small">
-                    Done
-                  </button>
+            <button
+              onClick={submitHandler}
+              type="submit"
+              className="cta-btn cta-small"
+            >
+              Done
+            </button>
           </div>
         </Fade>
       </Modal>
@@ -180,75 +184,58 @@ const [showTable,setShowTable]=useState(false)
 
           <div className="row ">
             <div className="col-md-7  ">
-            <div className="row">
-              <h5>
-                <strong>Equation</strong>
-              </h5>
-                  <div className="form-group col-6 m-auto">
+              <div className="row">
+                <h5>
+                  <strong>Equation</strong>
+                </h5>
+                <div className="form-group col-6 m-auto">
                   <TextField
                     id="standard-basic"
                     label="No of Equations(n)"
                     variant="filled"
                     type="number"
-                      onChange={(e) => {
-                        setN(e.target.value);
-                        setN2(e.target.value + 1);
-                      }}
-                  
-                      name="example-text-input"
-                     // placeholder="No of Equations(n)"
-                    />
-                     
-                     
-                 
-                 
-                  </div>
-                  <div className="form-group col-6 m-auto">
+                    onChange={(e) => {
+                      setN(e.target.value);
+                      setN2(e.target.value + 1);
+                    }}
+                    name="example-text-input"
+                    // placeholder="No of Equations(n)"
+                  />
+                </div>
+                <div className="form-group col-6 m-auto">
                   <TextField
                     id="standard-basic"
                     label="Value of B"
                     variant="filled"
                     type="number"
-                      onChange={(e) => {
-                        setB(e.target.value);
-                  
-                      }}
-                  
-                      name="example-text-input"
-                     // placeholder="No of Equations(n)"
-                    />
-                     
-                     
-                 
-                 
-                  </div>
-                  <div className="form-group mt-2 col-12 ">
+                    onChange={(e) => {
+                      setB(e.target.value);
+                    }}
+                    name="example-text-input"
+                    // placeholder="No of Equations(n)"
+                  />
+                </div>
+                <div className="form-group mt-2 col-12 ">
                   <button
-                      className="cta-btn"
-                      onClick={() => {
-                        createMatrix();
-                        handleOpen();
-                      }}
-                    >
-                      Create
-                    </button>
+                    className="cta-btn"
+                    onClick={() => {
+                      createMatrix();
+                      handleOpen();
+                    }}
+                  >
+                    Create
+                  </button>
+                </div>
+                <div className="col-md-12 table-div">
+                  {showTable && (
+                    <div className="card-body">
+                      <div className=" bg-light  border ">
+                        <strong>Integral : {root}</strong>
+                      </div>
                     </div>
-                    <div className="col-md-12 table-div">
-                    {showTable &&
-                <div className="card-body">
-        
-                  <div className=" bg-light  border ">
-                  <strong>Integral : {root}
-                 </strong>
-                  </div>
+                  )}
                 </div>
-                    }
-            </div>
-                </div>
-              
-          
-        
-       
+              </div>
             </div>
             <div className="col-md-5 img-div ">
               <img
@@ -256,23 +243,23 @@ const [showTable,setShowTable]=useState(false)
                 alt="Fluxo Social Media Marketing Template"
                 className="mw-100"
               />
-
               <p style={{ wordSpacing: "1px" }}>
-                In mathematics, the Gaussian elimination method is known as the
-                row reduction algorithm for solving linear equations systems. It
-                consists of a sequence of operations performed on the
-                corresponding matrix of coefficients. We can also use this
-                method to estimate either of the following:
+                {" "}
+                Newton's forward difference formula is a finite difference
+                identity giving an interpolated value between tabulated points.
+                This interpolation technique used when the interval difference
+                is same for all sequence of values.The formula states,
                 <br />
-                - The rank of the given matrix
+                <img
+                  src="../../assets/Newton Divided Difference Interpolation.png"
+                  alt="First slide"
+                  className="mw-100 m-3"
+                />
                 <br />
-                - The determinant of a square matrix
-                <br />- The inverse of an invertible matrix To perform row
-                reduction on a matrix, we have to complete a sequence of
-                elementary row operations to transform the matrix till we get 0s
-                (i.e., zeros) on the lower left-hand corner of the matrix as
-                much as possible. That means the obtained matrix should be an
-                upper triangular matrix.
+                This formula is particularly useful for interpolating the values
+                of f(x) near the beginning of the set of values given. h is
+                called the interval of difference and u = ( x – a ) / h, Here a
+                is the first term.
               </p>
             </div>
           </div>

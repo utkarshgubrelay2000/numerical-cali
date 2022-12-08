@@ -256,28 +256,14 @@ const [showTable,setShowTable]=useState(false)
             </div>
             <div className="col-md-5 img-div ">
               <img
-                src="../assets/Fixed.gif"
+                src="../assets/guass_jordan.jpg"
                 alt="Fluxo Social Media Marketing Template"
                 className="mw-100"
               />
+   <p style={{ wordSpacing: "1px" }}>
+                      The Gauss Jordan Elimination, or Gaussian Elimination, is an algorithm to solve a system of linear equations by representing it as an augmented matrix, reducing it using row operations, and expressing the system in reduced row-echelon form to find the values of the variables.
 
-              <p style={{ wordSpacing: "1px" }}>
-                In mathematics, the Gaussian elimination method is known as the
-                row reduction algorithm for solving linear equations systems. It
-                consists of a sequence of operations performed on the
-                corresponding matrix of coefficients. We can also use this
-                method to estimate either of the following:
-                <br />
-                - The rank of the given matrix
-                <br />
-                - The determinant of a square matrix
-                <br />- The inverse of an invertible matrix To perform row
-                reduction on a matrix, we have to complete a sequence of
-                elementary row operations to transform the matrix till we get 0s
-                (i.e., zeros) on the lower left-hand corner of the matrix as
-                much as possible. That means the obtained matrix should be an
-                upper triangular matrix.
-              </p>
+                       </p>
             </div>
           </div>
         </div>

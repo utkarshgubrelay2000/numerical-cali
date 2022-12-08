@@ -1,6 +1,5 @@
 import {toast} from 'react-toastify'
 import { Navbar } from "../../../component/Navbar";
-
 import Footer from "../../../component/Footer";
 import { useState } from 'react';
 import { makeStyles } from "@material-ui/core/styles";
@@ -226,10 +225,8 @@ const [showTable,setShowTable]=useState(false)
                   <div className="form-group mt-2 col-12 ">
                   <button
                       className="cta-btn"
-                      onClick={() => {
-                        createMatrix();
-                        handleOpen();
-                      }}
+                      onClick={() => submitHandler()}
+
                     >
                       Create
                     </button>
@@ -254,28 +251,22 @@ const [showTable,setShowTable]=useState(false)
        
             </div>
             <div className="col-md-5 img-div ">
-              <img
-                src="../assets/Fixed.gif"
-                alt="Fluxo Social Media Marketing Template"
-                className="mw-100"
+            
+              <p style={{ wordSpacing: "1px" }}>
+              <p style={{ wordSpacing: "1px" }}>
+                      The formula for inverse interpolation is similar to interpolation formula but few changes.Here to solve the problem of inverse interpolation the places of x and y are interchanged. The formula for inverse interpolation is:
+<br/>
+<img
+                src='../../assets/Inverse_Interpolation.png'
+                alt="First slide"
+                className="mw-100 m-3"
               />
 
-              <p style={{ wordSpacing: "1px" }}>
-                In mathematics, the Gaussian elimination method is known as the
-                row reduction algorithm for solving linear equations systems. It
-                consists of a sequence of operations performed on the
-                corresponding matrix of coefficients. We can also use this
-                method to estimate either of the following:
-                <br />
-                - The rank of the given matrix
-                <br />
-                - The determinant of a square matrix
-                <br />- The inverse of an invertible matrix To perform row
-                reduction on a matrix, we have to complete a sequence of
-                elementary row operations to transform the matrix till we get 0s
-                (i.e., zeros) on the lower left-hand corner of the matrix as
-                much as possible. That means the obtained matrix should be an
-                upper triangular matrix.
+<br/>
+
+This method can even be used when the points are unequally spaced. Here x is expressed as a function of y.
+
+                       </p>
               </p>
             </div>
           </div>
