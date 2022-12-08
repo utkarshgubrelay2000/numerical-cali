@@ -221,7 +221,7 @@ export default function Home(props) {
                       handleOpen();
                     }}
                   >
-                    Calculate{" "}
+                    create{" "}
                   </button>
                 </div>
                 <div className="col-md-12 table-div">
