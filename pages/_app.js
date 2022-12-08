@@ -19,7 +19,6 @@ import {
   Legend,ArcElement,
   Tooltip,
 } from 'chart.js';
-import { Chart } from 'react-chartjs-2';
 import { useEffect, useRef } from 'react';
 ChartJS.register(
   LinearScale,
