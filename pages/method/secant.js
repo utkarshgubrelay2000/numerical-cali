@@ -107,8 +107,7 @@ const [showTable,setShowTable]=useState(false)
       let data = { a: parseFloat(a), b: parseFloat(b), equation: equation.toLowerCase() };
 
       let res=await secantMethod(data)
-      if(res.error){
-        toast.error("Something went wrong")
+      if(res.error){     toast.error(res?.data?.response?.data)
       }
       else{
 

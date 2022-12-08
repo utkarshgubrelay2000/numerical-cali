@@ -102,8 +102,7 @@ const [showTable,setShowTable]=useState(false)
         
       };
       let res=await forwardDifferenceTable(data)
-      if(res.error){
-        toast.error("Something went wrong")
+      if(res.error){     toast.error(res?.data?.response?.data)
       }
       else{
 

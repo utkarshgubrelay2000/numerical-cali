@@ -107,20 +107,19 @@ export default function Home(props) {
       let data = { a: parseFloat(a), b: parseFloat(b), equation: equation.toLowerCase() };
 
       let res=await BisectionMethod(data)
-     
-      if(res.error){
-        toast.error("Something went wrong")
+     //console.log(res);
+      if(res.error){     toast.error(res?.data?.response?.data)
       }
       else{
-
-        setTable(res.data.table);
-        setRoot(res.data.root);
+console.log(res.data.arr);
+        setTable(res.data?.arr);
+        setRoot(res.data?.data?.root);
         setShowTable(true);
       }
 
     } } catch (error) {
     
-        //  console.log(error.response);
+         console.log(error.response);
       
         if (error.response.status === 400) {
          toast.error(error.response.data);

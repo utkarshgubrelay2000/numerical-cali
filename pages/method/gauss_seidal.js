@@ -101,8 +101,7 @@ const [showTable,setShowTable]=useState(false)
         equations:matrix
       };
       let res=await SeidalMethod(data)
-      if(res.error){
-        toast.error("Something went wrong")
+      if(res.error){     toast.error(res?.data?.response?.data)
       }
       else{
 

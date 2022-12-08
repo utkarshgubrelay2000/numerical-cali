@@ -101,8 +101,7 @@ const [showTable,setShowTable]=useState(false)
       let data = { lower: parseFloat(a), upper: parseFloat(b),n:parseFloat(n), func: equation.toLowerCase() };
       
       let res=await TrapezoidalRule(data)
-      if(res.error){
-        toast.error("Something went wrong")
+      if(res.error){     toast.error(res?.data?.response?.data)
       }
       else{
 

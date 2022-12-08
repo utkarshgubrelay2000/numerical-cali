@@ -97,9 +97,7 @@ export default function Home(props) {
           equations: matrix,
         };
         let res = await NDDIF(data);
-        if(res.error){
-          toast.error("Something went wrong")
-        }
+        if(res.error){     toast.error(res?.data?.response?.data)
         else{
      console.log(res.data);
         setTable(res.data.table);
