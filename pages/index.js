@@ -177,10 +177,10 @@ export async function getStaticProps(content) {
       content: [
         {
           title: " Trapezoidal Rule",
-          link: "/method/numerical_integration/trapezoidal_rule",
+          link: "/method/numerical_intergration/trapezoidal_rule",
         },
         {
-          title: "  Trapezoidal function",
+          title: "Trapezoidal function",
           link: "/method/numerical_intergration/trapezoidal_function",
         },
         {
