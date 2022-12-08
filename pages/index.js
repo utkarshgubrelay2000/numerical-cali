@@ -151,7 +151,7 @@ export async function getStaticProps(content) {
         },
         {
           title: "Lagrange Interpolation",
-          link: "/method/interpolation/lagrange",
+          link: "/method/interpolation/legrange",
         },
         {
           title: "Inverse Interpolation",
