@@ -108,7 +108,7 @@ const [showTable,setShowTable]=useState(false)
 
       console.log(res.data);
       setTable(res.data.table);
-      setRoot(res.data.root);
+      setRoot(res.data.Root);
       setShowTable(true);setResponse(true)
       }
     } } catch (error) {

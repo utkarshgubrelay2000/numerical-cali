@@ -76,7 +76,7 @@ export default function Home(props) {
           toast.error(res?.data?.response?.data);
         } else {
           setTable(res.data?.arr);
-          setRoot(res.data?.root);
+                 setRoot(res.data?.Root);
           setShowTable(true);
           setResponse(true);
         }

@@ -102,7 +102,7 @@ export default function Home(props) {
         else{
   
         setTable(res.data.table);
-        setRoot(res.data.root);
+        setRoot(res.data.Root);
       setShowTable(true);setResponse(true)
         }
       }

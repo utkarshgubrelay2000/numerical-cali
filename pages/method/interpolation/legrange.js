@@ -1,12 +1,14 @@
 import { toast } from "react-toastify";
 
 import { Navbar } from "../../../component/Navbar";
-
 import Footer from "../../../component/Footer";
 import { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { TextField } from "@material-ui/core";
 import { LegrangeInterpolation } from "../../../utils/api";
+import Modal from "@material-ui/core/Modal";
+import Backdrop from "@material-ui/core/Backdrop";
+import Fade from "@material-ui/core/Fade";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -36,8 +38,42 @@ export default function Home(props) {
   const [showGraph, setShowGraph] = useState(undefined);
   const [response, setResponse] = useState(false);
   const [n, setN] = useState(0);
- 
+  const [n2, setN2] = useState(0);
+  const [matrix, setMatrix] = useState([]);
+  const [matrixY, setMatrixY] = useState([]);
+  const handleOpen = () => {
+    setOpen(true);
+  };
 
+  const handleClose = () => {
+    setOpen(false);
+  };
+  const handleChange = ( i, event) => {
+    let value = [...matrix];
+    value[i] = parseFloat(event.target.value);
+    setMatrix(value);
+    //console.log(values);
+  };
+  const handleChangeY = ( i, event) => {
+    let value = [...matrixY];
+    value[i] = parseFloat(event.target.value);
+
+    setMatrixY(value);
+    //console.log(values);
+  };
+  const createMatrix = () => {
+    let ele = [];
+    let copy = [];
+    // setMatrix(ele)
+    for (let index = 0; index < n; index++) {
+        copy[index] = 0;
+      ele.push(copy);
+    }
+    console.log(ele);
+    setMatrix(ele);
+    setMatrixY(ele);
+    return ele;
+  };
   function validation() {
     if (!n) {
       //  console.log("no email");
@@ -68,7 +104,7 @@ export default function Home(props) {
         else{
   
         setTable(res.data.table);
-        setRoot(res.data.root);
+        setRoot(res.data.Root);
         setShowTable(true);setResponse(true)
         }
       }
@@ -87,7 +123,63 @@ export default function Home(props) {
   return (
     <div>
       <Navbar />
-   
+      <Modal
+        aria-labelledby="transition-modal-title"
+        aria-describedby="transition-modal-description"
+        className={classes.modal}
+        open={open}
+        onClose={handleClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
+        }}
+      >
+        <Fade in={open}>
+          <div className={classes.paper} style={{textAlign:"center"}}>
+            <label className='text-info bg-light p-2'>Note: Unfilled Values will be Treated as 0</label>
+            <div style={{maxHeight:'400px'}} className="table-responsive border">
+              <table  className="table  text-md-nowrap  text-center mg-b-0">
+                <tbody>
+                 
+                <h5> X</h5>
+                      <tr >
+                        {matrix.map((i, ind) => {
+                          return (
+                            <td className="m-0 p-0">
+                              <input
+                                placeholder={`x${ind}`}
+                                className="table-input"
+                                onChange={(e) => handleChange( ind, e)}
+                              />
+                            </td>
+                          );
+                        })}
+                      </tr>
+                      <h5> Y</h5>
+                      <tr >
+                        {matrixY.map((i, ind) => {
+                          return (
+                            <td className="m-0 p-0">
+                              <input
+                                placeholder={`y${ind}`}
+                                className="table-input"
+                                onChange={(e) => handleChangeY( ind, e)}
+                              />
+                            </td>
+                          );
+                        })}
+                      </tr>
+                </tbody>
+              </table>
+              <div className="text-center mt-4"></div>
+            </div>
+          <button onClick={submitHandler} type="submit" className="btn btn-primary">
+                    Done
+                  </button>
+          </div>
+        </Fade>
+      </Modal>
       <div className="container  method-container">
         {/* Highlight SVG Background */}
         <div className="row calulator-div ">
@@ -132,8 +224,13 @@ export default function Home(props) {
                   />
                 </div>
                 <div className="form-group mt-2 col-12 ">
-                  <button className="cta-btn" onClick={() => submitHandler()}>
-                   Calculate                    </button>
+                  <button className="cta-btn"  onClick={() => {
+                        createMatrix();
+                        handleOpen();
+                      }}
+                    >
+                    Create
+                  </button>
                 </div>
                 <div className="col-md-12 table-div">
                   <div className="card">

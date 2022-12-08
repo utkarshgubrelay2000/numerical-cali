@@ -74,7 +74,7 @@ const [showTable,setShowTable]=useState(false)
       }
       else{
 
-      setRoot(res.data.root);
+      setRoot(res.data.Root);
       setShowTable(true);setResponse(true)
       }
 

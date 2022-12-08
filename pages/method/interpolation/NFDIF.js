@@ -1,10 +1,13 @@
 import { toast } from "react-toastify";
-
 import { Navbar } from "../../../component/Navbar";
 
 import Footer from "../../../component/Footer";
 import { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import Modal from "@material-ui/core/Modal";
+import Backdrop from "@material-ui/core/Backdrop";
+import Fade from "@material-ui/core/Fade";
+
 import { TextField } from "@material-ui/core";
 import { NFDIF } from "../../../utils/api";
 const useStyles = makeStyles((theme) => ({
@@ -36,7 +39,8 @@ export default function Home(props) {
   const [response, setResponse] = useState(false);
   const [n, setN] = useState(0);
   const [n2, setN2] = useState(0);
-  const [matrix, setMatrix] = useState(Array(n).fill(Array(n).fill(null)));
+  const [matrix, setMatrix] = useState([]);
+  const [matrixY, setMatrixY] = useState([]);
   const handleOpen = () => {
     setOpen(true);
   };
@@ -44,28 +48,30 @@ export default function Home(props) {
   const handleClose = () => {
     setOpen(false);
   };
-  const handleChange = (row, column, event) => {
-    let mainMat = [...matrix];
-    let copy = [];
-    copy = [...matrix[row]];
-    copy[column] = parseInt(event.target.value);
-    // setMatrix(copy);
-    mainMat[row] = copy;
-    console.log(mainMat);
-    setMatrix(mainMat);
+  const handleChange = (i, event) => {
+    let value = [...matrix];
+    value[i] = parseFloat(event.target.value);
+    setMatrix(value);
+    //console.log(values);
+  };
+  const handleChangeY = (i, event) => {
+    let value = [...matrixY];
+    value[i] = parseFloat(event.target.value);
+
+    setMatrixY(value);
+    //console.log(values);
   };
   const createMatrix = () => {
     let ele = [];
     let copy = [];
     // setMatrix(ele)
     for (let index = 0; index < n; index++) {
-      for (let i = 0; i < parseInt(n) + parseInt(1); i++) {
-        copy[i] = 0;
-      }
+      copy[index] = 0;
       ele.push(copy);
     }
     console.log(ele);
     setMatrix(ele);
+    setMatrixY(ele);
     return ele;
   };
 
@@ -95,17 +101,16 @@ export default function Home(props) {
           equations: matrix,
         };
         let res = await NFDIF(data);
-        if(res.error){     toast.error(res?.data?.response?.data)}
-        else{
-  
-        setTable(res.data.table);
-        setRoot(res.data.root);
-        setShowTable(true);setResponse(true)
+        if (res.error) {
+          toast.error(res?.data?.response?.data);
+        } else {
+          setTable(res.data.table);
+          setRoot(res.data.Root);
+          setShowTable(true);
+          setResponse(true);
         }
       }
     } catch (error) {
-      //  console.log(error.response);
-
       if (error.response.status === 400) {
         toast.error(error.response.data);
       } else {
@@ -141,24 +146,34 @@ export default function Home(props) {
             >
               <table className="table  text-md-nowrap  text-center mg-b-0">
                 <tbody>
-                  {matrix.map((item, index) => {
-                    return (
-                      <tr key={index}>
-                        <th className="m-0 p-0 matrix-head">X{index + 1}</th>
-                        {item.map((i, ind) => {
-                          return (
-                            <td key={index+ind}className="m-0 p-0">
-                              <input
-                                placeholder={`${index}${ind}`}
-                                className="table-input"
-                                onChange={(e) => handleChange(index, ind, e)}
-                              />
-                            </td>
-                          );
-                        })}
-                      </tr>
-                    );
-                  })}{" "}
+                  <h5> X</h5>
+                  <tr>
+                    {matrix.map((i, ind) => {
+                      return (
+                        <td className="m-0 p-0">
+                          <input
+                            placeholder={`x${ind}`}
+                            className="table-input"
+                            onChange={(e) => handleChange(ind, e)}
+                          />
+                        </td>
+                      );
+                    })}
+                  </tr>
+                  <h5> Y</h5>
+                  <tr>
+                    {matrixY.map((i, ind) => {
+                      return (
+                        <td className="m-0 p-0">
+                          <input
+                            placeholder={`y${ind}`}
+                            className="table-input"
+                            onChange={(e) => handleChangeY(ind, e)}
+                          />
+                        </td>
+                      );
+                    })}
+                  </tr>
                 </tbody>
               </table>
               <div className="text-center mt-4"></div>
@@ -166,7 +181,7 @@ export default function Home(props) {
             <button
               onClick={submitHandler}
               type="submit"
-              className="cta-btn cta-small"
+              className="btn btn-primary"
             >
               Done
             </button>
@@ -217,12 +232,15 @@ export default function Home(props) {
                   />
                 </div>
                 <div className="form-group mt-2 col-12 ">
-                  <button className="cta-btn" onClick={() => {
-                        createMatrix();
-                        handleOpen();
-                      }}
-                    >
-                   Calculate                    </button>
+                  <button
+                    className="cta-btn"
+                    onClick={() => {
+                      createMatrix();
+                      handleOpen();
+                    }}
+                  >
+                    Calculate{" "}
+                  </button>
                 </div>
                 <div className="col-md-12 table-div">
                   <div className="card">
@@ -238,18 +256,30 @@ export default function Home(props) {
               </div>
             </div>
             <div className="col-md-5 img-div ">
-         
-              <p style={{ wordSpacing: "1px" }}>          Newton{"'"}s forward difference formula is a finite difference identity giving an interpolated value between tabulated points. This interpolation technique used when the interval difference is same for all sequence of values.The formula states,
-<br/>
-<img
-                  src="../../assets/Newton Forward Difference Interpolation.png"
+              <img
+                src="../assets/Fixed.gif"
+                alt="Fluxo Social Media Marketing Template"
+                className="mw-100"
+              />
+
+              <p style={{ wordSpacing: "1px" }}>
+                {" "}
+                Newton{"'"}s forward difference formula is a finite difference
+                identity giving an interpolated value between tabulated points.
+                This interpolation technique used when the interval difference
+                is same for all sequence of values.The formula states,
+                <br />
+                <img
+                  src="../../assets/Newton Backward Difference Interpolation.png"
                   alt="First slide"
                   className="mw-100 m-3"
                 />
-<br/>
-
-This formula is particularly useful for interpolating the values of f(x) near the beginning of the set of values given. h is called the interval of difference and u = ( x – a ) / h, Here a is the first term.
-               </p>
+                <br />
+                This formula is particularly useful for interpolating the values
+                of f(x) near the beginning of the set of values given. h is
+                called the interval of difference and u = ( x – a ) / h, Here a
+                is the first term.
+              </p>
             </div>
           </div>
         </div>

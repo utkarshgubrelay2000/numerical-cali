@@ -59,7 +59,7 @@ export default function Home(props) {
         else{
   
           setTable(res.data?.arr);
-          setRoot(res.data?.root);
+                 setRoot(res.data?.Root);
         setShowTable(true);setResponse(true)
         }
       }

@@ -31,7 +31,7 @@ export default function Home(props) {
   const [b, setB] = useState("");
   const [open, setOpen] = useState(false);
   const classes = useStyles();
-const [showTable,setShowTable]=useState(false)
+  const [showTable,setShowTable]=useState(false)
   const [equation, setEquation] = useState("");
   const [table, setTable] = useState([]);
   const [root, setRoot] = useState("");
@@ -39,7 +39,8 @@ const [showTable,setShowTable]=useState(false)
   const [response, setResponse] = useState(false);
   const [n, setN] = useState(0);
   const [n2, setN2] = useState(0);
-  const [matrix, setMatrix] = useState(Array(n).fill(Array(n).fill(null)));
+  const [matrix, setMatrix] = useState([]);
+  const [matrixY, setMatrixY] = useState([]);
   const handleOpen = () => {
     setOpen(true);
   };
@@ -47,28 +48,30 @@ const [showTable,setShowTable]=useState(false)
   const handleClose = () => {
     setOpen(false);
   };
-  const handleChange = (row, column, event) => {
-    let mainMat = [...matrix];
-    let copy = [];
-    copy=[...matrix[row]]
-    copy[column] = parseInt(event.target.value); 
-    // setMatrix(copy);
-    mainMat[row]=copy
-    console.log(mainMat);
-    setMatrix(mainMat)
+  const handleChange = ( i, event) => {
+    let value = [...matrix];
+    value[i] = parseFloat(event.target.value);
+    setMatrix(value);
+    //console.log(values);
+  };
+  const handleChangeY = ( i, event) => {
+    let value = [...matrixY];
+    value[i] = parseFloat(event.target.value);
+
+    setMatrixY(value);
+    //console.log(values);
   };
   const createMatrix = () => {
     let ele = [];
     let copy = [];
     // setMatrix(ele)
     for (let index = 0; index < n; index++) {
-      for (let i = 0; i < parseInt(n) + parseInt(1); i++) {
-        copy[i] = 0;
-      }
+        copy[index] = 0;
       ele.push(copy);
     }
     console.log(ele);
     setMatrix(ele);
+    setMatrixY(ele);
     return ele;
   };
 
@@ -106,7 +109,7 @@ const [showTable,setShowTable]=useState(false)
       else{
 
       setTable(res.data.table);
-      setRoot(res.data.root);
+      setRoot(res.data.Root);
       setShowTable(true);setResponse(true)
       }
     } } catch (error) {
@@ -143,31 +146,40 @@ const [showTable,setShowTable]=useState(false)
             <div style={{maxHeight:'400px'}} className="table-responsive border">
               <table  className="table  text-md-nowrap  text-center mg-b-0">
                 <tbody>
-                  {matrix.map((item, index) => {
-                    return (
-                      <tr key={index}>
-                        <th className="m-0 p-0 matrix-head">
-                        X{index + 1}
-                        </th>
-                        {item.map((i, ind) => {
+                 
+                <h5> X</h5>
+                      <tr >
+                        {matrix.map((i, ind) => {
                           return (
-                            <td key={index+ind}className="m-0 p-0">
+                            <td className="m-0 p-0">
                               <input
-                                placeholder={`${index}${ind}`}
+                                placeholder={`x${ind}`}
                                 className="table-input"
-                                onChange={(e) => handleChange(index, ind, e)}
+                                onChange={(e) => handleChange( ind, e)}
                               />
                             </td>
                           );
                         })}
                       </tr>
-                    );
-                  })}{" "}
+                      <h5> Y</h5>
+                      <tr >
+                        {matrixY.map((i, ind) => {
+                          return (
+                            <td className="m-0 p-0">
+                              <input
+                                placeholder={`y${ind}`}
+                                className="table-input"
+                                onChange={(e) => handleChangeY( ind, e)}
+                              />
+                            </td>
+                          );
+                        })}
+                      </tr>
                 </tbody>
               </table>
               <div className="text-center mt-4"></div>
             </div>
-          <button onClick={submitHandler} type="submit" className="cta-btn cta-small">
+          <button onClick={submitHandler} type="submit" className="btn btn-primary">
                     Done
                   </button>
           </div>
