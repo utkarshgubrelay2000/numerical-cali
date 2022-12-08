@@ -97,7 +97,7 @@ export default function Home(props) {
           equations: matrix,
         };
         let res = await EliminationMethod(data);
-        if(res.error){     toast.error(res?.data?.response?.data)
+        if(res.error){     toast.error(res?.data?.response?.data)}
         else{
   
         setTable(res.data.table);

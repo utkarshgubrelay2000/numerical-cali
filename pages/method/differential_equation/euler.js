@@ -100,7 +100,7 @@ export default function Home(props) {
           num:parseFloat(num),xn:parseFloat(xn) };
         let res = await EulerMethodSimple(data);
         console.log(res.data);
-        if(res.error){     toast.error(res?.data?.response?.data)
+        if(res.error){     toast.error(res?.data?.response?.data)}
         else{
   
         let array=[],array2=[]

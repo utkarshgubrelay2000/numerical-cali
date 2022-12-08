@@ -97,7 +97,7 @@ export default function Home(props) {
         let data = { x0: parseFloat(x0), y0: parseFloat(y0),n:parseFloat(n), func: equation.toLowerCase(),h:parseFloat(h),
           num:parseFloat(num),xn:parseFloat(xn) };
         let res = await rungaKutaMethod3(data);
-        if(res.error){     toast.error(res?.data?.response?.data)
+        if(res.error){     toast.error(res?.data?.response?.data)}
         else{
   
         let array=[],array2=[]
