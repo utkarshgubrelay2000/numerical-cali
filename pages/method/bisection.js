@@ -217,11 +217,11 @@ export default function Home(props) {
                       </h6> 
                 <div className='text-center'>
 
-<button onClick={()=>setShowGraph("Line")} className="btn btn-primary m-3">
+<button onClick={()=>setShowGraph("Line")} className="cta-btn cta-small m-3">
     Line
-  </button><button onClick={()=>setShowGraph("Bar")}  className="btn btn-primary m-3">
+  </button><button onClick={()=>setShowGraph("Bar")}  className="cta-btn cta-small m-3">
     Bar
-  </button><button onClick={()=>setShowGraph("Dough")} className="btn btn-primary m-3">
+  </button><button onClick={()=>setShowGraph("Dough")} className="cta-btn cta-small m-3">
     Doughnut
   </button>
  

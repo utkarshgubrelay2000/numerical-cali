@@ -211,19 +211,19 @@ export default function Home(props) {
                         <div className="text-center">
                           <button
                             onClick={() => setShowGraph("Line")}
-                            className="btn btn-primary m-3"
+                            className="cta-btn cta-small m-3"
                           >
                             Line
                           </button>
                           <button
                             onClick={() => setShowGraph("Bar")}
-                            className="btn btn-primary m-3"
+                            className="cta-btn cta-small m-3"
                           >
                             Bar
                           </button>
                           <button
                             onClick={() => setShowGraph("Dough")}
-                            className="btn btn-primary m-3"
+                            className="cta-btn cta-small m-3"
                           >
                             Doughnut
                           </button>
