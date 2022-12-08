@@ -23,6 +23,9 @@ export default function BarGraph(props) {
   return (
     <>
       <Bar
+      options={{
+        responsive: true,
+      }}
         data={{
           labels: arrayIndex,
           datasets: [

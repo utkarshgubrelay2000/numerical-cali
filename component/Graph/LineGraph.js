@@ -22,6 +22,9 @@ export default function Dough(props) {
   return (
     <>
       <Line
+       options={{
+        responsive: true,
+      }}
         data={{
           labels: indexA,
           datasets: [

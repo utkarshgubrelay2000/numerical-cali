@@ -21,6 +21,9 @@ export default function BarGraph(props){
 return (
     <>
    <Doughnut
+    options={{
+      responsive: true,
+    }}
    data={{
     labels: arrayIndex,
     datasets: [
