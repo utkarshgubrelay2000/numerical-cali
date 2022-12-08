@@ -130,7 +130,7 @@ export async function getStaticProps(content) {
         },
         {
           title: "Seidel Iteration Method",
-          link: "/method/gauss_seidel",
+          link: "/method/gauss_seidal",
         },
       ],
     },

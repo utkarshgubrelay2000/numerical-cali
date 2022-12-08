@@ -184,7 +184,7 @@ export default function Home(props) {
           <div className="col-md-12 m-auto method-div">
             <h1 className="mb-3 header-text ">
               {/* <strong>Grow your Linkedin Profile with us.</strong> */}
-              <strong>Gauss Elimination</strong>
+              <strong>Jacobii</strong>
             </h1>
           </div>
 
