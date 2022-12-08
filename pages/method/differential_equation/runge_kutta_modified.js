@@ -246,7 +246,7 @@ export default function Home(props) {
                   <div className="card">
                     {showTable && (
                       <div className="card-body">
-                        <div className=" bg-light  border ">  <table className="table  text-md-nowrap table-hover mg-b-0">
+                        <div className="table-responsive bg-light  border ">  <table className="table  text-md-nowrap table-hover mg-b-0">
                       <thead>
                         <tr>
                           <th>X</th>

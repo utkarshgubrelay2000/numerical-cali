@@ -223,7 +223,7 @@ const [showTable,setShowTable]=useState(false)
                   <div>
                     <h6 className="main-content-label mb-1">Answer</h6>
                   </div>
-                  <div className=" bg-light  border ">
+                  <div className="table-responsive bg-light  border ">
                   
                     <table className="table  text-md-nowrap table-hover mg-b-0">
                       <thead>

@@ -112,7 +112,7 @@ export default function Home(props) {
       if(res.error){     toast.error(res?.data?.response?.data)
       }
       else{
-console.log(res.data.arr);
+
         setTable(res.data?.arr);
         setRoot(res.data?.data?.root);
         setShowTable(true);
@@ -202,8 +202,8 @@ console.log(res.data.arr);
                   <div>
                     <h6 className="main-content-label mb-1">Answer</h6>
                   </div>
-    
-                  <table className="table table-responsive text-md-nowrap table-hover mg-b-0">
+    <div className="table-responsive">
+                  <table className="table  text-md-nowrap table-hover mg-b-0">
                       <thead>
                         <tr>
                           <th>S.No</th>
@@ -229,7 +229,7 @@ console.log(res.data.arr);
                         })}{" "}
                       </tbody>
                     </table>
-                
+                </div> 
                 </div> 
                 <div className='text-center'>
 
