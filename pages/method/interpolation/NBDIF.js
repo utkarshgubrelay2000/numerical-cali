@@ -156,7 +156,7 @@ export default function Home(props) {
                   <tr>
                     {matrix.map((i, ind) => {
                       return (
-                        <td className="m-0 p-0">
+                        <td key={ind} className="m-0 p-0">
                           <input
                             placeholder={`x${ind}`}
                             className="table-input"
@@ -170,7 +170,7 @@ export default function Home(props) {
                   <tr>
                     {matrixY.map((i, ind) => {
                       return (
-                        <td className="m-0 p-0">
+                        <td key={ind} className="m-0 p-0">
                           <input
                             placeholder={`y${ind}`}
                             className="table-input"

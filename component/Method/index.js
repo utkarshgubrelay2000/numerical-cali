@@ -12,7 +12,7 @@ export const MethodAcc = ({content,index}) => {
        <Accordion.Body>
       {content.content.map((item,index)=>{
         return(
-            <div className="mt-4">
+            <div key={index} className="mt-4">
 
           <Link href={item.link} key={index}>
             <a className="cta-btn-a  ">{item.title}</a>
