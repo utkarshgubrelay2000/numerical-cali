@@ -99,8 +99,7 @@ export default function Home(props) {
             toast.error(res?.data?.response?.data);
           }
         } else {
-          setTable(res.data.table);
-          setRoot(res.data.Root);
+          setTable(res.data);
           setShowTable(true);
           setResponse(true);
         }
