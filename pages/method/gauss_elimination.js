@@ -107,10 +107,11 @@ export default function Home(props) {
           }
         } else {
           console.log(res.data);
-          setTable(res.data.table);
-          setRoot(res.data.Root);
+          setTable(res.data);
+         // setRoot(res.data.Root);
           setShowTable(true);
           setResponse(true);
+          handleClose()
         }
       }
     } catch (error) {
@@ -221,7 +222,7 @@ export default function Home(props) {
                       handleOpen();
                     }}
                   >
-                    Calculate{" "}
+                    Create{" "}
                   </button>
                 </div>
                 <div className="col-md-12 table-div">

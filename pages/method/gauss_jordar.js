@@ -105,10 +105,11 @@ export default function Home(props) {
             toast.error(res?.data?.response?.data);
           }
         } else {
-          setTable(res.data.table);
-          setRoot(res.data.Root);
-          setShowTable(true);
-          setResponse(true);
+          setTable(res.data);
+          // setRoot(res.data.Root);
+           setShowTable(true);
+           setResponse(true);
+           handleClose()
         }
       }
     } catch (error) {
