@@ -252,7 +252,7 @@ export default function Home(props) {
                         </tr>
                       </thead>
                       <tbody>
-                        {table.map((ele,index)=>{
+                        {table && table.map((ele,index)=>{
                          return(<tr>   <th>{ele}</th>
                             <th>{table2[index]}</th></tr>)
                         })}{" "}

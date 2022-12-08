@@ -194,7 +194,7 @@ export default function Home(props) {
                                 </tr>
                               </thead>
                               <tbody>
-                                {table.map((item, index) => {
+                                {table && table.map((item, index) => {
                                   return (
                                     <tr key={index}>
                                       <th scope="row">X{index + 1}</th>
