@@ -47,24 +47,18 @@ export default function Home(props) {
   const handleClose = () => {
     setOpen(false);
   };
-  const handleChange = (row, column, event) => {
-    let mainMat = [...matrix];
-    let copy = [];
-    copy = [...matrix[row]];
-    copy[column] = parseInt(event.target.value);
-    // setMatrix(copy);
-    mainMat[row] = copy;
-    console.log(mainMat);
-    setMatrix(mainMat);
+  const handleChange = ( i, event) => {
+    let value = [...matrix];
+    value[i] = parseFloat(event.target.value);
+    setMatrix(value);
+    //console.log(values);
   };
   const createMatrix = () => {
     let ele = [];
     let copy = [];
     // setMatrix(ele)
     for (let index = 0; index < n; index++) {
-      for (let i = 0; i < parseInt(n) + parseInt(1); i++) {
-        copy[i] = 0;
-      }
+        copy[index] = 0;
       ele.push(copy);
     }
     console.log(ele);
