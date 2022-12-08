@@ -112,6 +112,8 @@ export default function Home(props) {
         console.log(res.data);
         setTable(res.data.table);
         setRoot(res.data.root);
+      setShowTable(true);
+
       }
     } catch (error) {
       //  console.log(err.response);
