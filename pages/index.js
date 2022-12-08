@@ -96,10 +96,6 @@ export async function getStaticProps(content) {
           link: "/method/bisection",
         },
         {
-          title: "False Position Method",
-          link: "/method/falseposition",
-        },
-        {
           title: "Regula Falsi Method",
           link: "/method/regula_falsi",
         },
