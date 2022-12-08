@@ -27,8 +27,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Home(props) {
   const [a, setA] = useState("");
   const [b, setB] = useState("");
-  const [open, setOpen] = useState(false);
-  const classes = useStyles();
+
   const [showTable,setShowTable]=useState(false)
   const [equation, setEquation] = useState("");
   const [table, setTable] = useState([]);
@@ -36,39 +35,7 @@ export default function Home(props) {
   const [showGraph, setShowGraph] = useState(undefined);
   const [response, setResponse] = useState(false);
   const [n, setN] = useState(0);
-  const [n2, setN2] = useState(0);
-  const [matrix, setMatrix] = useState(Array(n).fill(Array(n).fill(null)));
-  const handleOpen = () => {
-    setOpen(true);
-  };
 
-  const handleClose = () => {
-    setOpen(false);
-  };
-  const handleChange = (row, column, event) => {
-    let mainMat = [...matrix];
-    let copy = [];
-    copy=[...matrix[row]]
-    copy[column] = parseInt(event.target.value); 
-    // setMatrix(copy);
-    mainMat[row]=copy
-    console.log(mainMat);
-    setMatrix(mainMat)
-  };
-  const createMatrix = () => {
-    let ele = [];
-    let copy = [];
-    // setMatrix(ele)
-    for (let index = 0; index < n; index++) {
-      for (let i = 0; i < parseInt(n) + parseInt(1); i++) {
-        copy[i] = 0;
-      }
-      ele.push(copy);
-    }
-    console.log(ele);
-    setMatrix(ele);
-    return ele;
-  };
 
   function validation() {
    if (!a) {

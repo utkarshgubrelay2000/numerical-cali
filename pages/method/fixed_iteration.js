@@ -4,75 +4,21 @@ import BarGraph from "../../component/Graph/BarGraph";
 import LineGraph from "../../component/Graph/LineGraph";
 import DoughGraph from "../../component/Graph/DoughGraph";
 import Footer from "../../component/Footer";
-import { useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import {
-  BisectionMethod,
-  EliminationMethod,
   fixediterationMethod,
 } from "../../utils/api";
 import { TextField } from "@material-ui/core";
-const useStyles = makeStyles((theme) => ({
-  modal: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  paper: {
-    backgroundColor: theme.palette.background.paper,
-    border: "2px solid #000",
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
-    width: "60%",
-    overflowX: "hidde",
-    overflowY: "auto",
-  },
-}));
-export default function Home(props) {
+
+export default function Home() {
   const [a, setA] = useState("");
   const [b, setB] = useState("");
-  const [open, setOpen] = useState(false);
-  const classes = useStyles();
   const [showTable, setShowTable] = useState(false);
   const [equation, setEquation] = useState("");
   const [table, setTable] = useState([]);
   const [root, setRoot] = useState("");
   const [showGraph, setShowGraph] = useState(undefined);
   const [response, setResponse] = useState(false);
-  const [n, setN] = useState(0);
-  const [n2, setN2] = useState(0);
-  const [matrix, setMatrix] = useState(Array(n).fill(Array(n).fill(null)));
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-  const handleChange = (row, column, event) => {
-    let mainMat = [...matrix];
-    let copy = [];
-    copy = [...matrix[row]];
-    copy[column] = parseInt(event.target.value);
-    // setMatrix(copy);
-    mainMat[row] = copy;
-    console.log(mainMat);
-    setMatrix(mainMat);
-  };
-  const createMatrix = () => {
-    let ele = [];
-    let copy = [];
-    // setMatrix(ele)
-    for (let index = 0; index < n; index++) {
-      for (let i = 0; i < parseInt(n) + parseInt(1); i++) {
-        copy[i] = 0;
-      }
-      ele.push(copy);
-    }
-    console.log(ele);
-    setMatrix(ele);
-    return ele;
-  };
+ 
 
   function validation() {
     if (!a) {

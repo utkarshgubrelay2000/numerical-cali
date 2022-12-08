@@ -27,48 +27,15 @@ const useStyles = makeStyles((theme) => ({
 export default function Home(props) {
   const [a, setA] = useState("");
   const [b, setB] = useState("");
-  const [open, setOpen] = useState(false);
-  const classes = useStyles();
+
+
   const [showTable, setShowTable] = useState(false);
   const [equation, setEquation] = useState("");
   const [table, setTable] = useState([]);
   const [root, setRoot] = useState("");
   const [showGraph, setShowGraph] = useState(undefined);
   const [response, setResponse] = useState(false);
-  const [n, setN] = useState(0);
-  const [n2, setN2] = useState(0);
-  const [matrix, setMatrix] = useState(Array(n).fill(Array(n).fill(null)));
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-  const handleChange = (row, column, event) => {
-    let mainMat = [...matrix];
-    let copy = [];
-    copy = [...matrix[row]];
-    copy[column] = parseInt(event.target.value);
-    // setMatrix(copy);
-    mainMat[row] = copy;
-    console.log(mainMat);
-    setMatrix(mainMat);
-  };
-  const createMatrix = () => {
-    let ele = [];
-    let copy = [];
-    // setMatrix(ele)
-    for (let index = 0; index < n; index++) {
-      for (let i = 0; i < parseInt(n) + parseInt(1); i++) {
-        copy[i] = 0;
-      }
-      ele.push(copy);
-    }
-    console.log(ele);
-    setMatrix(ele);
-    return ele;
-  };
+  
 
   function validation() {
     if (!a) {
@@ -105,12 +72,13 @@ export default function Home(props) {
         };
 
         let res = await regulaFalsiMethod(data);
-        if(res.error){     toast.error(res?.data?.response?.data)}
-        else{
-  
+        if (res.error) {
+          toast.error(res?.data?.response?.data);
+        } else {
           setTable(res.data?.arr);
           setRoot(res.data?.root);
-      setShowTable(true);setResponse(true)
+          setShowTable(true);
+          setResponse(true);
         }
       }
     } catch (error) {
@@ -194,47 +162,49 @@ export default function Home(props) {
                             <h6 className="main-content-label mb-1">Answer</h6>
                           </div>
                           <div className="table-responsive bg-light  border ">
-                          <table className="table  text-md-nowrap table-hover mg-b-0">
-                      <thead>
-                        <tr>
-                          <th>S.No</th>
-                          <th>A</th>
-                          <th>B</th>
-                          <th>m</th>
-                          <th>f(m)</th>
-                          <th>f(m)*f(a)</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {table && table.map((item, index) => {
-                          return (
-                            <tr key={index}>
-                              <th scope="row">{index + 1}</th>
-                              <td>{item.a}</td>
-                              <td>{item.b}</td>
-                              <td>{item.m}</td>
-                              <td>{item.fm}</td>
-                              <td>{item.fma}</td>
-                            </tr>
-                          );
-                        })}{" "}
-                      </tbody>
-                    </table>
+                            <table className="table  text-md-nowrap table-hover mg-b-0">
+                              <thead>
+                                <tr>
+                                  <th>S.No</th>
+                                  <th>A</th>
+                                  <th>B</th>
+                                  <th>m</th>
+                                  <th>f(m)</th>
+                                  <th>f(m)*f(a)</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {table &&
+                                  table.map((item, index) => {
+                                    return (
+                                      <tr key={index}>
+                                        <th scope="row">{index + 1}</th>
+                                        <td>{item.a}</td>
+                                        <td>{item.b}</td>
+                                        <td>{item.m}</td>
+                                        <td>{item.fm}</td>
+                                        <td>{item.fma}</td>
+                                      </tr>
+                                    );
+                                  })}{" "}
+                              </tbody>
+                            </table>
                           </div>
                         </div>
                         <div>
-                    <h6 className="main-content-label mb-1">Answer</h6>
-                  </div>
-                  <h6 className='root-h6'
-                        style={{
-                          border: "1px black solid",
-                          padding: "10px",
-                          margin: "auto",
-                        }}
-                      >
-                  Integral
-                           {"  "}: {root}
-                      </h6>
+                          <h6 className="main-content-label mb-1">Answer</h6>
+                        </div>
+                        <h6
+                          className="root-h6"
+                          style={{
+                            border: "1px black solid",
+                            padding: "10px",
+                            margin: "auto",
+                          }}
+                        >
+                          Integral
+                          {"  "}: {root}
+                        </h6>
                         <div className="text-center">
                           <button
                             onClick={() => setShowGraph("Line")}
@@ -281,43 +251,39 @@ export default function Home(props) {
                 alt="Fluxo Social Media Marketing Template"
                 className="mw-100"
               />
-    <p style={{ wordSpacing: "1px" }}>
-                        Regula Falsi Method: The convergce process in the
-                        bisection method is very slow. It depends only on the
-                        choice of end points of the interval [a,b]. The function
-                        f(x) does not have any role in finding the point c
-                        (which is just the mid-point of a and b). It is used
-                        only to decide the next smaller interval [a,c] or [c,b].
-                        A better approximation to c can be obtained by taking
-                        the straight line L joining the points (a,f(a)) and
-                        (b,f(b)) intersecting the x-axis. To obtain the value of
-                        m we can equate the two expressions of the slope m of
-                        the line L.
-                       <strong>
-                        <br /> Algorithm  :<br />
-                        
-                          </strong> {" "}  For
-                        any continuous function f(x),
-                        <ul>
-                          <li>
-                            Find two points, say a and b such that a {"<"} b and
-                            f(a)* f(b) {"<"} 0 and initialize error
-                            e (depends upto what accuracy you want the result)
-                          </li>
-                          <li>
-                            Take the interval {"[a, b]"} and determine the next
-                            value of m.
-                          </li>
-                          m = [a*f(b)-b*f(a)] / [f(b)-f(a)]
-                          <li>
-                            m is the root of the given function if f(m) = 0;
-                            else follow the next step
-                          </li>
-                          <li>If f(a)*f(m) {">"} 0 then a = m</li>
-                          else b = m
-                          <li>Repeat above steps until |f(m)| {"<"} e.</li>
-                        </ul>
-                      </p>
+              <p style={{ wordSpacing: "1px" }}>
+                Regula Falsi Method: The convergce process in the bisection
+                method is very slow. It depends only on the choice of end points
+                of the interval [a,b]. The function f(x) does not have any role
+                in finding the point c (which is just the mid-point of a and b).
+                It is used only to decide the next smaller interval [a,c] or
+                [c,b]. A better approximation to c can be obtained by taking the
+                straight line L joining the points (a,f(a)) and (b,f(b))
+                intersecting the x-axis. To obtain the value of m we can equate
+                the two expressions of the slope m of the line L.
+                <strong>
+                  <br /> Algorithm :<br />
+                </strong>{" "}
+                For any continuous function f(x),
+                <ul>
+                  <li>
+                    Find two points, say a and b such that a {"<"} b and f(a)*
+                    f(b) {"<"} 0 and initialize error e (depends upto what
+                    accuracy you want the result)
+                  </li>
+                  <li>
+                    Take the interval {"[a, b]"} and determine the next value of
+                    m.
+                  </li>
+                  m = [a*f(b)-b*f(a)] / [f(b)-f(a)]
+                  <li>
+                    m is the root of the given function if f(m) = 0; else follow
+                    the next step
+                  </li>
+                  <li>If f(a)*f(m) {">"} 0 then a = m</li>
+                  else b = m<li>Repeat above steps until |f(m)| {"<"} e.</li>
+                </ul>
+              </p>
             </div>
           </div>
         </div>
