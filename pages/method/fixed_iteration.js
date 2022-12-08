@@ -233,7 +233,7 @@ export default function Home() {
                 className="mw-100"
               />
 
-<div className="col-lg-6 col-sm-12  col-12">
+<div className=" col-sm-12  col-12">
                       Fixed Point Iteration Method: Fixed point iteration method
                       is open and simple method for finding real root of
                       non-linear equation by successive approximation. It

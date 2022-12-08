@@ -284,7 +284,7 @@ export default function Home() {
                       <li>Repeat step 2,3, 4 until |f(m)| {"<"} e.</li>{" "}
                     </ul>
                   </div>
-                  <div className="col-lg-6  col-sm-12 col-12">
+                  <div className=" col-sm-12 col-12">
                     <img src="./assets/secant01.gif" alt="" />
                   </div>
                 </div>
