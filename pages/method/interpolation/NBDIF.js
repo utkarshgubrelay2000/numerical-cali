@@ -98,7 +98,10 @@ export default function Home(props) {
       if (validation()) {
         let data = {
           n: parseFloat(n),
-          equations: matrix,
+          x: parseFloat(b),
+          arrayX:matrix,
+          arrayY:matrixY,
+          
         };
         let res = await NBDIF(data);
         if (res.error) {
