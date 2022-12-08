@@ -40,7 +40,7 @@ export const JacobiMethod=async(data)=>{
 export const BisectionMethod=async(data)=>{
     try {
         let res=  await axios
-        .post(`${baseurl}/Bisection-method`, data) 
+        .post(`${baseurl}/bisection-method`, data) 
         return res
     } catch (error) {
         return {error:true,data:error}
