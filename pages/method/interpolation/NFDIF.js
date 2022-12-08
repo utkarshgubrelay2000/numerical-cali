@@ -1,14 +1,10 @@
 import { toast } from "react-toastify";
 
-import { Navbar } from "../../component/Navbar";
+import { Navbar } from "../../../component/Navbar";
 
-import Footer from "../../component/Footer";
+import Footer from "../../../component/Footer";
 import { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Modal from "@material-ui/core/Modal";
-import Backdrop from "@material-ui/core/Backdrop";
-import Fade from "@material-ui/core/Fade";
-import { EliminationMethod } from "../../utils/api";
 import { TextField } from "@material-ui/core";
 import { NFDIF } from "../../../utils/api";
 const useStyles = makeStyles((theme) => ({
