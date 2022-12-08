@@ -71,7 +71,7 @@ export default function Home(props) {
 
         <div className="row method-container">
           <div className="col-md-12 col-sm-12 p-5 m-auto">
-            <div className="m-auto text-center">
+            <div id='method' className="m-auto text-center">
               <h1>Methods</h1>
             </div>
           </div>

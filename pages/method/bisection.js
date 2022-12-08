@@ -249,28 +249,44 @@ const [showTable,setShowTable]=useState(false)
             </div>
             <div className="col-md-5 img-div ">
               <img
-                src="../assets/Fixed.gif"
+                src="../assets/bisection.jpg"
                 alt="Fluxo Social Media Marketing Template"
                 className="mw-100"
               />
 
-              <p style={{ wordSpacing: "1px" }}>
-                In mathematics, the Gaussian elimination method is known as the
-                row reduction algorithm for solving linear equations systems. It
-                consists of a sequence of operations performed on the
-                corresponding matrix of coefficients. We can also use this
-                method to estimate either of the following:
-                <br />
-                - The rank of the given matrix
-                <br />
-                - The determinant of a square matrix
-                <br />- The inverse of an invertible matrix To perform row
-                reduction on a matrix, we have to complete a sequence of
-                elementary row operations to transform the matrix till we get 0s
-                (i.e., zeros) on the lower left-hand corner of the matrix as
-                much as possible. That means the obtained matrix should be an
-                upper triangular matrix.
-              </p>
+<p style={{ wordSpacing: "1px" }}>
+                        Bisection Method : The bisection method is used to find
+                        the roots of a polynomial equation. It separates the
+                        interval and subdivides the interval in which the root
+                        of the equation lies. The principle behind this method
+                        is the intermediate theorem for continuous functions. It
+                        works by narrowing the gap between the positive and
+                        negative intervals until it closes in on the correct
+                        answer. The bisection method is also known as interval
+                        halving method, root-finding method, binary search
+                        method or dichotomy method.<strong>
+                          {" "} 
+                        <br /> Algorithm  :<br />
+                          </strong> {" "}
+                            For any
+                        continuous function f(x),
+                        <ul>
+                          <li>
+                            Find two points, say a and b such that a {"<"} b and
+                            f(a)* f(b) {"<"} 0 and initialize error
+                            e (depends upto what accuracy you want the result)
+                          </li>
+                          <li>Find the midpoint of a and b, say “m”</li>
+                          <li>
+                            m is the root of the given function if f(m) = 0;
+                            else follow the next step
+                          </li>
+                          <li>Divide the interval [a, b]</li>
+                          <li>If f(a)*f(m) {">"} 0 then a = m</li>
+                          else b = m
+                          <li>Repeat above steps until |f(m)| {"<"} e.</li>
+                        </ul>
+                      </p>
             </div>
           </div>
         </div>

@@ -254,28 +254,47 @@ export default function Home(props) {
             </div>
             <div className="col-md-5 img-div ">
               <img
-                src="../assets/Fixed.gif"
+                src="../assets/Regula_falsi01.gif"
                 alt="Fluxo Social Media Marketing Template"
                 className="mw-100"
               />
-
-              <p style={{ wordSpacing: "1px" }}>
-                In mathematics, the Gaussian elimination method is known as the
-                row reduction algorithm for solving linear equations systems. It
-                consists of a sequence of operations performed on the
-                corresponding matrix of coefficients. We can also use this
-                method to estimate either of the following:
-                <br />
-                - The rank of the given matrix
-                <br />
-                - The determinant of a square matrix
-                <br />- The inverse of an invertible matrix To perform row
-                reduction on a matrix, we have to complete a sequence of
-                elementary row operations to transform the matrix till we get 0s
-                (i.e., zeros) on the lower left-hand corner of the matrix as
-                much as possible. That means the obtained matrix should be an
-                upper triangular matrix.
-              </p>
+    <p style={{ wordSpacing: "1px" }}>
+                        Regula Falsi Method: The convergce process in the
+                        bisection method is very slow. It depends only on the
+                        choice of end points of the interval [a,b]. The function
+                        f(x) does not have any role in finding the point c
+                        (which is just the mid-point of a and b). It is used
+                        only to decide the next smaller interval [a,c] or [c,b].
+                        A better approximation to c can be obtained by taking
+                        the straight line L joining the points (a,f(a)) and
+                        (b,f(b)) intersecting the x-axis. To obtain the value of
+                        m we can equate the two expressions of the slope m of
+                        the line L.
+                       <strong>
+                        <br /> Algorithm  :<br />
+                        
+                          </strong> {" "}  For
+                        any continuous function f(x),
+                        <ul>
+                          <li>
+                            Find two points, say a and b such that a {"<"} b and
+                            f(a)* f(b) {"<"} 0 and initialize error
+                            e (depends upto what accuracy you want the result)
+                          </li>
+                          <li>
+                            Take the interval {"[a, b]"} and determine the next
+                            value of m.
+                          </li>
+                          m = [a*f(b)-b*f(a)] / [f(b)-f(a)]
+                          <li>
+                            m is the root of the given function if f(m) = 0;
+                            else follow the next step
+                          </li>
+                          <li>If f(a)*f(m) {">"} 0 then a = m</li>
+                          else b = m
+                          <li>Repeat above steps until |f(m)| {"<"} e.</li>
+                        </ul>
+                      </p>
             </div>
           </div>
         </div>

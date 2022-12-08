@@ -2,21 +2,19 @@
 export const Navbar = () => {
     const toggleMenu = () => document.body.classList.toggle("open");
     return (
-        <nav class="navbar">
-        <button onClick={toggleMenu} class="burger"></button>
-        <button class="button">Home</button>
-        <div class="dropdowns">
-          <div class="dropdown">
-            <button class="button">
+        <nav className="navbar">
+        <button onClick={toggleMenu} className="burger"></button>
+        <button className="button">Home</button>
+        <div className="dropdowns">
+          <div className="dropdown">
+            <button className="button">
               Contact Us
             </button>
            </div>
-          <div class="dropdown">
-            <button class="button">
+          <div className="dropdown">
+            <a href='/#method' className="button">
               Methods
-           
-            </button>
-          
+            </a>
           </div>
         </div>
       </nav>

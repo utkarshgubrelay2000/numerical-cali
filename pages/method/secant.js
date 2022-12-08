@@ -135,7 +135,7 @@ const [showTable,setShowTable]=useState(false)
           <div className="col-md-12 m-auto method-div">
             <h1 className="mb-3 header-text ">
               {/* <strong>Grow your Linkedin Profile with us.</strong> */}
-              <strong>Bisection Method</strong>
+              <strong>Secant Method</strong>
             </h1>
           </div>
           
@@ -252,28 +252,45 @@ const [showTable,setShowTable]=useState(false)
             </div>
             <div className="col-md-5 img-div ">
               <img
-                src="../assets/Fixed.gif"
+                src="../assets/secant01.gif"
                 alt="Fluxo Social Media Marketing Template"
                 className="mw-100"
               />
-
-              <p style={{ wordSpacing: "1px" }}>
-                In mathematics, the Gaussian elimination method is known as the
-                row reduction algorithm for solving linear equations systems. It
-                consists of a sequence of operations performed on the
-                corresponding matrix of coefficients. We can also use this
-                method to estimate either of the following:
-                <br />
-                - The rank of the given matrix
-                <br />
-                - The determinant of a square matrix
-                <br />- The inverse of an invertible matrix To perform row
-                reduction on a matrix, we have to complete a sequence of
-                elementary row operations to transform the matrix till we get 0s
-                (i.e., zeros) on the lower left-hand corner of the matrix as
-                much as possible. That means the obtained matrix should be an
-                upper triangular matrix.
-              </p>
+     <p className="text-muted card-sub-title">
+                  <div className="row">
+                    <div className=" col-sm-12  col-12">
+                      Secant Method : This method similar to the Regular-falsi
+                      method but here we don’t need to check f(a)f(b){"<"}0
+                      again and again after every approximation. In this method,
+                      the neighbourhoods roots are approximated by secant line
+                      or chord to the function f(x).<strong>
+                          {" "}
+                          <br /> Algorithm  :<br />
+                          </strong> {" "} : For any
+                      continuous function f(x),
+                      <ul>
+                        <li>
+                          Find two points, say a and b such that a {"<"} b and
+                          initialize error  e (depends upto what accuracy you want the result)
+                        </li>
+                        <li>
+                          Take the interval [a, b] and determine the next value
+                          of m.
+                        </li>
+                        m = [a*f(b)-b*f(a)] / [f(b)-f(a)]
+                        <li>
+                          m is the root of the given function if f(m) = 0; else
+                          follow the next step
+                        </li>
+                        <li>a=b, b=m</li>
+                        <li>Repeat step 2,3, 4 until |f(m)| {"<"} e.</li>{" "}
+                      </ul>
+                    </div>
+                    <div className="col-lg-6  col-sm-12 col-12">
+                      <img src="./assets/secant01.gif" alt="" />
+                    </div>
+                  </div>
+                </p>
             </div>
           </div>
         </div>

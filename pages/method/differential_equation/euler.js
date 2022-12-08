@@ -96,10 +96,8 @@ export default function Home(props) {
     e.preventDefault();
     try {
       if (validation()) {
-        let data = {
-          n: parseFloat(n),
-          equations: matrix,
-        };
+        let data = { x0: parseFloat(x0), y0: parseFloat(y0),n:parseFloat(n), func: equation.toLowerCase(),h:parseFloat(h),
+          num:parseFloat(num),xn:parseFloat(xn) };
         let res = await EulerMethodSimple(data);
         console.log(res.data);
         let array=[],array2=[]

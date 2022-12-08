@@ -264,23 +264,43 @@ export default function Home(props) {
                 className="mw-100"
               />
 
-              <p style={{ wordSpacing: "1px" }}>
-                In mathematics, the Gaussian elimination method is known as the
-                row reduction algorithm for solving linear equations systems. It
-                consists of a sequence of operations performed on the
-                corresponding matrix of coefficients. We can also use this
-                method to estimate either of the following:
-                <br />
-                - The rank of the given matrix
-                <br />
-                - The determinant of a square matrix
-                <br />- The inverse of an invertible matrix To perform row
-                reduction on a matrix, we have to complete a sequence of
-                elementary row operations to transform the matrix till we get 0s
-                (i.e., zeros) on the lower left-hand corner of the matrix as
-                much as possible. That means the obtained matrix should be an
-                upper triangular matrix.
-              </p>
+<div className="col-lg-6 col-sm-12  col-12">
+                      Fixed Point Iteration Method: Fixed point iteration method
+                      is open and simple method for finding real root of
+                      non-linear equation by successive approximation. It
+                      requires only one initial guess to start. Since it is open
+                      method its convergence is not guaranteed. This method is
+                      also known as Successive Approximation Method. To find the
+                      root of nonlinear equation f(x)=0 by fixed point iteration
+                      method, we write given equation f(x)=0 in the form of x =
+                      g(x). If x0 is initial guess then next approximated root
+                      in this method is obtaine by: x1 = g(x1) And similarly,
+                      next to next approximated root is obtained by using value
+                      of x1 i.e. x2 = g(x2) And the process is repeated until we
+                      get root within desired accuracy e.
+                      <strong>
+                        {" "}
+                        <br /> Algorithm  :<br />
+                      </strong>{" "}
+                       For any continuous function f(x),
+                      <ul>
+                        <li>
+                        Guess a initial value, sa
+                        y b and initialize error
+                         e (depends upto what accuracy you want the result)
+                        </li>
+                        <li>
+                        write f(x)=0 in the form x=g(x)
+                         
+                        </li>
+                        m = g(b)
+                        <li>
+                        m is the root of the given function if f(m) = 0 then stop else follow the next step
+                        </li>
+                        <li>b = m</li>
+                        <li>Repeat step 3, 4 until |f(m)| {"<"} e.</li>{" "}
+                      </ul>
+                    </div>
             </div>
           </div>
         </div>

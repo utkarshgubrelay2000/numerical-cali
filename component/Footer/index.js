@@ -3,21 +3,21 @@ import React from 'react';
 export default function Footer() {
   return (
     <section id="footer" >
-        <div class="main-footer">
-                <div class="logoinfo" data-aos="fade-up">
+        <div className="main-footer">
+                <div className="logoinfo" data-aos="fade-up">
                         <h2>Logo</h2>
             
-                        <div class="contact-details">
+                        <div className="contact-details">
                             <h1>Contact Us</h1>
                             <li>
-                                <div class="fa fa-phone"></div><a href="tel:+910000000000">+91 0000000000</a>
+                                <div className="fa fa-phone"></div><a href="tel:+910000000000">+91 0000000000</a>
                             </li>
-                            <li><div class="fa fa-envelope"></div><a href="mailto:@gmail.com">@gmail.com</a></li>
+                            <li><div className="fa fa-envelope"></div><a href="mailto:@gmail.com">@gmail.com</a></li>
                            
                         </div>
                 </div>
              
-                <div class="com" data-aos="fade-up">
+                <div className="com" data-aos="fade-up">
                     <h1>About</h1>
                  <ul>
                <li> <a href="#" >Home</a></li>
@@ -26,14 +26,14 @@ export default function Footer() {
                <li> <a href="#">Contact</a></li>
             </ul>   
             </div>
-            <div class="info" data-aos="fade-up">
+            <div className="info" data-aos="fade-up">
                 <h1>Social Media</h1>
-                <div class="sociallogos">
-                    <div class="logobox">
-                        <a href="#" class="fa fa-instagram"></a>
-                        <a href="#" class="fa fa-linkedin"></a>
-                        <a href="#" class="fa fa-facebook"></a>
-                        <a href="#" class="fa fa-youtube-play"></a>
+                <div className="sociallogos">
+                    <div className="logobox">
+                        <a href="#" className="fa fa-instagram"></a>
+                        <a href="#" className="fa fa-linkedin"></a>
+                        <a href="#" className="fa fa-facebook"></a>
+                        <a href="#" className="fa fa-youtube-play"></a>
                     </div>
                 </div>
             </div>
