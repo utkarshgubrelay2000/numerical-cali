@@ -1,4 +1,5 @@
-import toast from "react-toastify";
+import {toast} from 'react-toastify'
+
 import { Navbar } from "../../component/Navbar";
 
 import Footer from "../../component/Footer";

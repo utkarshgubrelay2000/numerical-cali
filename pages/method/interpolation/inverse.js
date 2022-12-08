@@ -33,42 +33,10 @@ const [showTable,setShowTable]=useState(false)
   const [equation, setEquation] = useState("");
   const [table, setTable] = useState([]);
   const [root, setRoot] = useState("");
-  const [showGraph, setShowGraph] = useState(undefined);
+
   const [response, setResponse] = useState(false);
   const [n, setN] = useState(0);
-  const [n2, setN2] = useState(0);
-  const [matrix, setMatrix] = useState(Array(n).fill(Array(n).fill(null)));
-  const handleOpen = () => {
-    setOpen(true);
-  };
 
-  const handleClose = () => {
-    setOpen(false);
-  };
-  const handleChange = (row, column, event) => {
-    let mainMat = [...matrix];
-    let copy = [];
-    copy=[...matrix[row]]
-    copy[column] = parseInt(event.target.value); 
-    // setMatrix(copy);
-    mainMat[row]=copy
-    console.log(mainMat);
-    setMatrix(mainMat)
-  };
-  const createMatrix = () => {
-    let ele = [];
-    let copy = [];
-    // setMatrix(ele)
-    for (let index = 0; index < n; index++) {
-      for (let i = 0; i < parseInt(n) + parseInt(1); i++) {
-        copy[i] = 0;
-      }
-      ele.push(copy);
-    }
-    console.log(ele);
-    setMatrix(ele);
-    return ele;
-  };
 
   function validation() {
    if (!n) {
@@ -123,54 +91,7 @@ const [showTable,setShowTable]=useState(false)
   return (
     <div>
       <Navbar />
-      <Modal
-        aria-labelledby="transition-modal-title"
-        aria-describedby="transition-modal-description"
-        className={classes.modal}
-        open={open}
-        onClose={handleClose}
-        closeAfterTransition
-        BackdropComponent={Backdrop}
-        BackdropProps={{
-          timeout: 500,
-        }}
-      >
-        <Fade in={open}>
-          <div className={classes.paper} style={{textAlign:"center"}}>
-            <label className='text-info bg-light p-2'>Note: Unfilled Values will be Treated as 0</label>
-            <div style={{maxHeight:'400px'}} className="table-responsive border">
-              <table  className="table  text-md-nowrap  text-center mg-b-0">
-                <tbody>
-                  {matrix.map((item, index) => {
-                    return (
-                      <tr key={index}>
-                        <th className="m-0 p-0 matrix-head">
-                        X{index + 1}
-                        </th>
-                        {item.map((i, ind) => {
-                          return (
-                            <td key={index+ind}className="m-0 p-0">
-                              <input
-                                placeholder={`${index}${ind}`}
-                                className="table-input"
-                                onChange={(e) => handleChange(index, ind, e)}
-                              />
-                            </td>
-                          );
-                        })}
-                      </tr>
-                    );
-                  })}{" "}
-                </tbody>
-              </table>
-              <div className="text-center mt-4"></div>
-            </div>
-          <button onClick={submitHandler} type="submit" className="cta-btn cta-small">
-                    Done
-                  </button>
-          </div>
-        </Fade>
-      </Modal>
+  
       <div className="container  method-container">
         {/* Highlight SVG Background */}
         <div className="row calulator-div ">
