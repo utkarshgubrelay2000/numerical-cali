@@ -111,10 +111,12 @@ export default function Home(props) {
             toast.error(res?.data?.response?.data);
           }
         } else {
-          setTable(res.data.table);
-          setRoot(res.data.Root);
+         
+          setRoot(res.data);
           setShowTable(true);
           setResponse(true);
+        handleClose()
+
         }
       }
     } catch (error) {
@@ -216,7 +218,7 @@ export default function Home(props) {
                 <div className="form-group col-6 m-auto">
                   <TextField
                     id="standard-basic"
-                    label="No of Equations(n)"
+                    label="No of Data"
                     variant="filled"
                     type="number"
                     onChange={(e) => {
@@ -224,20 +226,20 @@ export default function Home(props) {
                       setN2(e.target.value + 1);
                     }}
                     name="example-text-input"
-                    // placeholder="No of Equations(n)"
+                    // placeholder="No of Data"
                   />
                 </div>
                 <div className="form-group col-6 m-auto">
                   <TextField
                     id="standard-basic"
-                    label="Value of B"
+                    label="Value of X"
                     variant="filled"
                     type="number"
                     onChange={(e) => {
                       setB(e.target.value);
                     }}
                     name="example-text-input"
-                    // placeholder="No of Equations(n)"
+                    // placeholder="No of Data"
                   />
                 </div>
                 <div className="form-group mt-2 col-12 ">
