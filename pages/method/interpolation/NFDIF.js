@@ -186,7 +186,7 @@ export default function Home(props) {
             </div>
             <div className="col-md-5 img-div ">
          
-              <p style={{ wordSpacing: "1px" }}>          Newton's forward difference formula is a finite difference identity giving an interpolated value between tabulated points. This interpolation technique used when the interval difference is same for all sequence of values.The formula states,
+              <p style={{ wordSpacing: "1px" }}>          Newton{"'"}s forward difference formula is a finite difference identity giving an interpolated value between tabulated points. This interpolation technique used when the interval difference is same for all sequence of values.The formula states,
 <br/>
 <img
                   src="../../assets/Newton Forward Difference Interpolation.png"
